@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosa vedere? - ProLoco Calatabiano</title>
+  <!-- Font moderno -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    html {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      background: linear-gradient(to bottom, #0e8ac7, #1b73b5);
+      background-attachment: fixed;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      padding-bottom: 200px;
+    }
+
+    header {
+      padding: 20px;
+      background: white;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    .logo {
+      height: 120px;
+      display: block;
+      margin: 0 auto;
+    }
+ 
+    h1 {
+      margin: 15px 0 0;
+      font-size: 1.8rem;
+      color: #000000;
+    }
+
+    p {
+      margin: 20px; 
+      font-size: 1.1rem;
+      color: #fff;
+    }
+
+    .buttons {
+      margin: 40px 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 15px;
+      background: radial-gradient(#dc773c, #e95e0f);
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .btn-img {
+      width: 250px; /* Puoi cambiare la dimensione */
+      height: auto;
+      object-fit: cover; /* Mantiene il rapporto di aspetto senza deformare */
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .link:hover {
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+    }
+
+    .info {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      max-width: 600px;
+      width: 90%;
+      margin: 30px auto 120px auto;
+    }
+
+    .info h2 {
+      color: #ffffff;
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    .info a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .info a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo" src="img/logo.png" alt="Logo Pro Loco">
+    <h1>Benvenuti a Calatabiano</h1>
+  </header>
+
+  <p>Scansiona i QR Code in giro o clicca per scoprire le attrazioni del paese</p>
+
+  <div class="buttons">
+  <a class="link" href="chiesamadre.html">
+    <img class="btn-img" src="img/chiesamadre/foto1.jpg" alt="Chiesa Madre"> Chiesa Madre
+  </a>
+  <a class="link" href="castello.html">
+    <img class="btn-img" src="img/castello/foto5.jpg" alt="Castello"> Castello Arabo - Normanno
+  </a>
+  <a class="link" href="spiaggia.html">
+    <img class="btn-img" src="img/spiaggia/foto1.jpg" alt="Spiaggia"> Spiaggia di San Marco
+  </a>
+  <a class="link" href="gesuemaria.html">
+    <img class="btn-img" src="img/gesuemaria/foto1.jpg" alt="Gesù e Maria"> Chiesa di Gesù e Maria
+  </a>
+</div>
+  <footer class="info">
+    <h2>Pro Loco Calatabiano A.P.S.</h2>
+    <p>📍 <a href="https://www.google.com/maps/place/Via+Umberto+6,+95011+Calatabiano+CT" target="_blank">
+      Via Umberto, 6 - 95011 Calatabiano (CT)
+    </a></p>
+    <p>✉️ <a href="mailto:prolococalatabiano@gmail.com">prolococalatabiano@gmail.com</a></p>
+    <p>📞 <a href="tel:+393314316133">+39 331 431 6133</a></p>
+    <p>🕒 Lun - Dom 9:00 - 13:00 / 16:00 - 20:00</p>
+    <div style="margin-top: 18px;">
+      <a href="https://www.facebook.com/prolococalatabiano/" target="_blank" rel="noopener noreferrer" style="color: #fff; margin: 0 10px; font-size: 1.5em;">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="https://www.instagram.com/pro_loco_calatabiano_aps/" target="_blank" rel="noopener noreferrer" style="color: #fff; margin: 0 10px; font-size: 1.5em;">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </footer>
+</body>
+</html>
