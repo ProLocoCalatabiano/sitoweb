@@ -9,135 +9,201 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
-    html {
-      height: 100%;
-    }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #f5f7fa;
+}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      background: linear-gradient(to bottom, #0e8ac7, #1b73b5);
-      background-attachment: fixed;
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      padding-bottom: 200px;
-    }
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+.nav-logo {
+  height: 60px;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s;
+}
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: #e95e0f;
+}
 
-    header {
-      padding: 20px;
-      background: white;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-    }
+/* Hero */
+.hero {
+  height: 70vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/calatabiano.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin: 0 0 10px 0;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin: 0;
+}
 
-    .logo {
-      height: 120px;
-      display: block;
-      margin: 0 auto;
-    }
- 
-    h1 {
-      margin: 15px 0 0;
-      font-size: 1.8rem;
-      color: #000000;
-    }
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+.card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.card h3 {
+  margin: 15px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+.card-btn {
+  display: inline-block;
+  margin: 10px 0 15px 0;
+  padding: 8px 16px;
+  background: linear-gradient(45deg, #dc773c, #e95e0f);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.card-btn:hover {
+  background: linear-gradient(45deg, #e95e0f, #dc773c);
+}
 
-    p {
-      margin: 20px; 
-      font-size: 1.1rem;
-      color: #fff;
-    }
-
-    .buttons {
-      margin: 40px 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .link {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 15px;
-      background: radial-gradient(#dc773c, #e95e0f);
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .btn-img {
-      width: 250px; /* Puoi cambiare la dimensione */
-      height: auto;
-      object-fit: cover; /* Mantiene il rapporto di aspetto senza deformare */
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    .link:hover {
-      color: white;
-      transform: scale(1.05);
-      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
-    }
-
-    .info {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: white;
-      padding: 20px;
-      text-align: center;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      max-width: 600px;
-      width: 90%;
-      margin: 30px auto 120px auto;
-    }
-
-    .info h2 {
-      color: #ffffff;
-      margin-top: 0;
-      font-size: 1.4rem;
-    }
-
-    .info a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .info a:hover {
-      text-decoration: underline;
-    }
+/* Footer */
+footer.info {
+  background: #222;
+  color: #ccc;
+  padding: 40px 20px;
+  text-align: center;
+}
+footer.info h2 {
+  color: white;
+  margin-bottom: 15px;
+}
+footer.info a {
+  color: #ffd27f;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+footer.info a:hover {
+  color: white;
+}
+footer .socials {
+  margin-top: 20px;
+}
+footer .socials a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s;
+}
+footer .socials a:hover {
+  color: #e95e0f;
+}
   </style>
 </head>
 <body>
-  <header>
-    <img class="logo" src="img/logo.png" alt="Logo Pro Loco">
-    <h1>Benvenuti a Calatabiano</h1>
-  </header>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <img class="nav-logo" src="img/logo.png" alt="Logo Pro Loco">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="chiesamadre.html">Chiesa Madre</a></li>
+        <li><a href="castello.html">Castello</a></li>
+        <li><a href="spiaggia.html">Spiaggia</a></li>
+        <li><a href="gesuemaria.html">Gesù e Maria</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <p>Scansiona i QR Code in giro o clicca per scoprire le attrazioni del paese</p>
+  <!-- Hero section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Benvenuti a Calatabiano</h1>
+      <p>Scopri le bellezze del nostro paese tra cultura, storia e natura</p>
+    </div>
+  </section>
 
-  <div class="buttons">
-  <a class="link" href="chiesamadre.html">
-    <img class="btn-img" src="img/chiesamadre/foto1.jpg" alt="Chiesa Madre"> Chiesa Madre
-  </a>
-  <a class="link" href="castello.html">
-    <img class="btn-img" src="img/castello/foto5.jpg" alt="Castello"> Castello Arabo - Normanno
-  </a>
-  <a class="link" href="spiaggia.html">
-    <img class="btn-img" src="img/spiaggia/foto1.jpg" alt="Spiaggia"> Spiaggia di San Marco
-  </a>
-  <a class="link" href="gesuemaria.html">
-    <img class="btn-img" src="img/gesuemaria/foto1.jpg" alt="Gesù e Maria"> Chiesa di Gesù e Maria
-  </a>
-</div>
+  <!-- Attrazioni -->
+  <section class="cards">
+    <a href="chiesamadre.html" class="card">
+      <img class="card-img" src="img/chiesamadre/foto1.jpg" alt="Chiesa Madre">
+      <h3>Chiesa Madre</h3>
+      <span class="card-btn">Scopri</span>
+    </a>
+    <a href="castello.html" class="card">
+      <img class="card-img" src="img/castello/foto5.jpg" alt="Castello">
+      <h3>Castello Arabo - Normanno</h3>
+      <span class="card-btn">Scopri</span>
+    </a>
+    <a href="spiaggia.html" class="card">
+      <img class="card-img" src="img/spiaggia/foto1.jpg" alt="Spiaggia">
+      <h3>Spiaggia di San Marco</h3>
+      <span class="card-btn">Scopri</span>
+    </a>
+    <a href="gesuemaria.html" class="card">
+      <img class="card-img" src="img/gesuemaria/foto1.jpg" alt="Gesù e Maria">
+      <h3>Chiesa di Gesù e Maria</h3>
+      <span class="card-btn">Scopri</span>
+    </a>
+  </section>
+
+  <!-- Footer -->
   <footer class="info">
     <h2>Pro Loco Calatabiano A.P.S.</h2>
     <p>📍 <a href="https://www.google.com/maps/place/Via+Umberto+6,+95011+Calatabiano+CT" target="_blank">
@@ -146,13 +212,9 @@
     <p>✉️ <a href="mailto:prolococalatabiano.social@gmail.com">prolococalatabiano.social@gmail.com</a></p>
     <p>📞 <a href="tel:+393314316133">+39 331 431 6133</a></p>
     <p>🕒 Lun - Dom 9:00 - 13:00 / 16:00 - 20:00</p>
-    <div style="margin-top: 18px;">
-      <a href="https://www.facebook.com/prolococalatabiano/" target="_blank" rel="noopener noreferrer" style="color: #fff; margin: 0 10px; font-size: 1.5em;">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/pro_loco_calatabiano_aps/" target="_blank" rel="noopener noreferrer" style="color: #fff; margin: 0 10px; font-size: 1.5em;">
-        <i class="fab fa-instagram"></i>
-      </a>
+    <div class="socials">
+      <a href="https://www.facebook.com/prolococalatabiano/" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/pro_loco_calatabiano_aps/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
   </footer>
 </body>
