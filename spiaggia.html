@@ -7,53 +7,123 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      text-align: center;
-      background: whitesmoke;
+      color: #333;
+      background: #f5f7fa;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px;
+    }
+    .nav-logo {
+      height: 60px;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
       margin: 0;
       padding: 0;
     }
-    h1 {
-      background: #e95e0f;
+    .nav-links li a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+      transition: color 0.3s;
+    }
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #e95e0f;
+    }
+
+    /* Hero */
+    .hero {
+      height: 50vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/spiaggia/foto1.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       color: white;
-      padding: 15px;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
       margin: 0;
     }
+
+    /* Gallery */
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
-      margin: 20px;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
     .gallery img {
-      max-width: 300px;
-      height: auto;
+      width: 100%;
+      height: 200px;
       object-fit: cover;
-      border-radius: 5px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
       cursor: pointer;
     }
     .gallery img:hover {
       transform: scale(1.05);
     }
+
+    /* Description */
+    .description {
+      padding: 20px;
+      max-width: 900px;
+      margin: 20px auto 40px auto;
+      background-color: rgba(255,255,255,0.8);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    /* Button link */
     .link {
-      display: inline-block;
-      margin: 20px;
-      padding: 12px 20px;
-      background: linear-gradient(to right, #2196f3, #42a5f5);
+      display: block;
+      text-align: center;
+      width: fit-content;
+      margin: 40px auto;
+      padding: 12px 24px;
+      background: linear-gradient(45deg, #dc773c, #e95e0f);
       color: white;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.2s, background 0.3s;
+      transition: background 0.3s;
     }
+    .link:hover {
+      background: linear-gradient(45deg, #e95e0f, #dc773c);
+    }
+
+    /* Lightbox */
     .lightbox {
       display: none;
       position: fixed;
-      z-index: 1000;
+      z-index: 2000;
       padding-top: 60px;
       left: 0;
       top: 0;
@@ -65,8 +135,8 @@
     .lightbox-content {
       margin: auto;
       display: block;
-      max-width: 100%;
-      max-height: 100%;
+      max-width: 90%;
+      max-height: 90%;
     }
     .close {
       position: absolute;
@@ -77,39 +147,48 @@
       font-weight: bold;
       cursor: pointer;
     }
-    .description {
-      padding: 15px;
-      max-width: 800px;
-      margin: 20px auto;
-      background-color: #3031311f;
-      border-radius: 10px;
-      text-align: center;
-    }
   </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <img class="nav-logo" src="img/logo.png" alt="Logo Pro Loco">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chiesamadre.html">Chiesa Madre</a></li>
+        <li><a href="castello.html">Castello</a></li>
+        <li><a href="spiaggia.html" class="active">Spiaggia</a></li>
+        <li><a href="gesuemaria.html">Gesù e Maria</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Spiaggia di San Marco</h1>
+  </section>
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <img src="img/spiaggia/foto1.jpg" alt="Spiaggia 1">
+    <img src="img/spiaggia/foto1.jpg" alt="Spiaggia 2">
+    <img src="img/spiaggia/foto1.jpg" alt="Spiaggia 3">
+  </div>
+
+  <!-- Description -->
+  <div class="description">
+    Inserisci qui una breve descrizione della Spiaggia di San Marco
+  </div>
+
+  <!-- Link -->
+  <a class="link" href="index.html">⬅ Torna alla Home</a>
+
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
     <img class="lightbox-content" id="lightbox-img">
   </div>
-  <h1>Spieggia di San Marco</h1>
-
-  <div class="gallery">
-    <img src="img/spiaggia/foto1.jpg" alt="San Marco 1">
-    <img src="img/spiaggia/foto1.jpg" alt="San Marco 2">
-    <img src="img/spiaggia/foto1.jpg" alt="San Marco 3">
-  </div>
-
-    <div class="description">
-    La spiaggia si estende per circa 2.0km ed è compresa tra il fiume Alcantara 
-    ed il torrente Pasteria che separa la zona di San Marco con quella di marina di cottone.
-    L’area a ridosso del mare è pianeggiante ed è costituita da terreni agricoli con pochissime case.
-    Possiamo considerarla una zona naturalistica specie per gli alti eucaliptus che delimitano la spiaggia
-    formando un vero e proprio boschetto a ridosso di essa. La gran parte della spiaggia è libera ed isolata. 
-    La sua posizione la rende poco utilizzata giusto dai residenti di Calatabiano e dei paesini limitrofi. Ottima per chi ama poca gente intorno a sè.
-  </div>
-
-  <a class="link" href="index.html">⬅ Torna alla Home</a>
 
   <script>
     const lightbox = document.getElementById('lightbox');
