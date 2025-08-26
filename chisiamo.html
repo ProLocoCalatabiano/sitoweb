@@ -97,74 +97,6 @@ body {
   display: block;
 }
 
-/* Hero */
-.hero {
-  height: 70vh;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/calatabiano.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  padding: 0 20px;
-}
-.hero h1 {
-  font-size: 3rem;
-  margin: 0 0 10px 0;
-}
-.hero p {
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-/* Cards */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-}
-.card-img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-.card h3 {
-  margin: 15px 0;
-  font-size: 1.2rem;
-  color: #333;
-}
-.card-btn {
-  display: inline-block;
-  margin: 10px 0 15px 0;
-  padding: 8px 16px;
-  background: linear-gradient(45deg, #dc773c, #e95e0f);
-  color: white;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-.card-btn:hover {
-  background: linear-gradient(45deg, #e95e0f, #dc773c);
-}
-
 /* Footer */
 footer.info {
   background: #222;
@@ -204,51 +136,28 @@ footer .socials a:hover {
   <div class="nav-container">
     <img class="nav-logo" src="img/logo.png" alt="Logo Pro Loco">
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">Esplora ▾</a>
         <ul class="dropdown-content">
-          <li><a href="chiesamadre.html">Chiesa Madre</a></li>
-          <li><a href="castello.html">Castello</a></li>
-          <li><a href="spiaggia.html">Spiaggia</a></li>
-          <li><a href="gesuemaria.html">Gesù e Maria</a></li>
         </ul>
       </li>
-      <li><a href="chisiamo.html">Chi Siamo</a></li>
+      <li><a href="chisiamo.html" class="active">Chi Siamo</a></li>
     </ul>
   </div>
 </nav>
 
-  <!-- Hero section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Benvenuti a Calatabiano</h1>
-      <p>Scopri le bellezze del nostro paese tra cultura, storia e natura</p>
-    </div>
-  </section>
 
-  <!-- Attrazioni -->
-  <section class="cards">
-    <a href="chiesamadre.html" class="card">
-      <img class="card-img" src="img/chiesamadre/foto1.jpg" alt="Chiesa Madre">
-      <h3>Chiesa Madre</h3>
-      <span class="card-btn">Scopri</span>
-    </a>
-    <a href="castello.html" class="card">
-      <img class="card-img" src="img/castello/foto5.jpg" alt="Castello">
-      <h3>Castello Arabo - Normanno</h3>
-      <span class="card-btn">Scopri</span>
-    </a>
-    <a href="spiaggia.html" class="card">
-      <img class="card-img" src="img/spiaggia/foto1.jpg" alt="Spiaggia">
-      <h3>Spiaggia di San Marco</h3>
-      <span class="card-btn">Scopri</span>
-    </a>
-    <a href="gesuemaria.html" class="card">
-      <img class="card-img" src="img/gesuemaria/foto1.jpg" alt="Gesù e Maria">
-      <h3>Chiesa di Gesù e Maria</h3>
-      <span class="card-btn">Scopri</span>
-    </a>
+  <!-- Sezione Chi Siamo -->
+  <section style="max-width: 1000px; margin: 100px auto 60px auto; padding: 20px; text-align: center;">
+    <img src="img/chisiamo/chisiamo.jpg" alt="Foto di gruppo Pro Loco" style="width: 100%; border-radius: 10px; margin-bottom: 30px;">
+    <div style="background: white; border-radius: 10px; padding: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      <h2>Cosa Facciamo</h2>
+      <p>
+        La Pro Loco Calatabiano A.P.S. dal 2012 è impegnata nella valorizzazione del patrimonio storico, culturale e naturale del nostro territorio. 
+        Organizziamo eventi, iniziative turistiche e culturali, e collaboriamo con enti e cittadini per promuovere la partecipazione attiva della comunità.
+      </p>
+    </div>
   </section>
 
   <!-- Footer -->
