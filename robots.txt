@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prolococalatabiano.github.io/sitoweb/sitemap.txt
