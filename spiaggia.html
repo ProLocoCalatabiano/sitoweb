@@ -114,14 +114,15 @@
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-auto-rows: 200px;
       gap: 15px;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
     }
     .gallery img {
       width: 100%;
-      height: 200px;
+      height: 100%;
       object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -175,10 +176,13 @@
       background-color: rgba(0,0,0,0.9);
     }
     .lightbox-content {
-      margin: auto;
       display: block;
       max-width: 90%;
       max-height: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     .close {
       position: absolute;
@@ -188,7 +192,36 @@
       font-size: 40px;
       font-weight: bold;
       cursor: pointer;
+      z-index: 2100;
     }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      color: rgba(255,255,255,0.6);
+      font-weight: bold;
+      font-size: 30px;
+      user-select: none;
+      transition: 0.3s;
+      z-index: 2100;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .prev:hover, .next:hover {
+      color: #e95e0f;
+    }
+    .lightbox-left, .lightbox-right {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      cursor: pointer;
+      z-index: 2000;
+    }
+    .lightbox-left { left: 0; }
+    .lightbox-right { right: 0; }
   </style>
 </head>
 <body>
@@ -236,15 +269,23 @@
   <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
     <img class="lightbox-content" id="lightbox-img">
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+    <div class="lightbox-left"></div>
+    <div class="lightbox-right"></div>
   </div>
 
   <script>
+    let currentIndex = 0;
+    const images = Array.from(document.querySelectorAll('.gallery img'));
+
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.close');
 
     document.querySelectorAll('.gallery img').forEach(img => {
       img.addEventListener('click', () => {
+        currentIndex = images.indexOf(img);
         lightbox.style.display = 'block';
         lightboxImg.src = img.src;
       });
@@ -252,6 +293,26 @@
 
     closeBtn.addEventListener('click', () => {
       lightbox.style.display = 'none';
+    });
+
+    document.querySelector('.prev').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    });
+
+    document.querySelector('.lightbox-left').addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      lightboxImg.src = images[currentIndex].src;
+    });
+
+    document.querySelector('.lightbox-right').addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      lightboxImg.src = images[currentIndex].src;
     });
 
     window.addEventListener('click', (e) => {
