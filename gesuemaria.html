@@ -38,32 +38,6 @@
   transform: scale(1.08);
   box-shadow: 0 12px 28px rgba(0,0,0,0.45);
 }
-
-/* Chatbot label */
-.chatbot-label {
-  position: fixed;
-  bottom: 32px;
-  right: 95px;
-  background: white;
-  color: #333;
-  padding: 8px 14px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  z-index: 2999;
-  opacity: 0;
-  transform: translateX(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  pointer-events: none;
-  white-space: nowrap;
-}
-
-/* Show label on hover */
-.chatbot-float:hover + .chatbot-label {
-  opacity: 1;
-  transform: translateX(0);
-}
     /* Navbar */
     .navbar {
       position: fixed;
@@ -378,13 +352,8 @@
       }
     });
   </script>
-    <a href="https://chatgpt.com/g/g-6980aac069608191abc6c3790f361b86-turistico-calatabiano"
-   target="_blank"
-   class="chatbot-float"
-   aria-label="Chatta con noi">
-   <i class="fas fa-comment-dots"></i>
-</a>
-<div class="chatbot-label">
-  💬 Chatta con noi
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
 </body>
 </html>
