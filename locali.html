@@ -4,7 +4,7 @@
   <meta name="robots" content="noindex, nofollow">  <!-- toglie indicizzazione -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ristoranti & Bar - Pro Loco Calatabiano</title>
+  <title>Home - Pro Loco Calatabiano</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -238,6 +238,28 @@
       text-align: center;
     }
 
+    /* Button link */
+    .link {
+      display: block;
+      width: fit-content;
+      margin: 40px auto;
+      padding: 10px 22px;
+      background: linear-gradient(135deg, #dc773c, #e95e0f);
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+    }
+
+    .link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(233,94,15,0.4);
+      background: linear-gradient(135deg, #e95e0f, #dc773c);
+    }
+
     /* Lightbox */
     .lightbox {
       display: none;
@@ -310,7 +332,7 @@
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn">Esplora ▾</a>
           <ul class="dropdown-content">
-            <li><a href="locali.html" class="active">Bar & Ristoranti</a></li>
+            <li><a href="locali.html">Bar & Ristoranti</a></li>
             <li><a href="chiesamadre.html">Chiesa Madre</a></li>
             <li><a href="castello.html">Castello</a></li>
             <li><a href="spiaggia.html">Spiaggia</a></li>
@@ -327,11 +349,10 @@
     <h1>Ristoranti & Bar</h1>
   </section>
 
-  <!-- Presumed Attrazioni section here -->
+  <!-- Other content -->
 
-  <!-- Locali section, moved after Attrazioni -->
+  <!-- Locali section on home -->
   <section class="locali-wrapper">
-    <h2>Ristoranti & Bar</h2>
     <div class="locali-grid">
       <div class="locale-card">
         <img src="img/locali/duina.jpg" class="locale-img" alt="Bar Centrale">
@@ -373,66 +394,12 @@
         </div>
       </div>
     </div>
-    <a href="index.html" class="locali-button">Torna alla Home</a>
-  </section>
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-    <a class="prev">&#10094;</a>
-    <a class="next">&#10095;</a>
-    <div class="lightbox-left"></div>
-    <div class="lightbox-right"></div>
-  </div>
+
+    <!-- Link -->
+  <a class="link" href="index.html">Torna alla Home</a>
 
   <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.close');
-
-    let currentIndex = 0;
-    const images = Array.from(document.querySelectorAll('.gallery img'));
-
-    document.querySelectorAll('.gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        currentIndex = images.indexOf(img);
-        lightbox.style.display = 'block';
-        lightboxImg.src = img.src;
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
-
-    document.querySelector('.prev').addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      lightboxImg.src = images[currentIndex].src;
-    });
-
-    document.querySelector('.next').addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      lightboxImg.src = images[currentIndex].src;
-    });
-
-    document.querySelector('.lightbox-left').addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + images.length) % images.length;
-      lightboxImg.src = images[currentIndex].src;
-    });
-
-    document.querySelector('.lightbox-right').addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % images.length;
-      lightboxImg.src = images[currentIndex].src;
-    });
-
-    window.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
+  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
   </script>
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
 </body>
 </html>
