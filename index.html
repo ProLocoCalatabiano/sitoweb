@@ -156,6 +156,7 @@ body {
   align-items: stretch;
   max-width: 1200px;
   margin: 0 auto;
+  margin-top: 0; /* reset */
 }
 .card {
   display: flex;
@@ -214,6 +215,97 @@ body {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 8px 20px rgba(233,94,15,0.4);
   background: linear-gradient(135deg, #dc773c, #e95e0f);
+}
+
+/* Locali */
+.locali-wrapper {
+  max-width: 1200px;
+  margin: 60px auto 48px auto;
+  padding: 0 20px;
+}
+.locali-wrapper h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 32px;
+  font-size: 2rem;
+  color: #e95e0f;
+}
+.locali-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-items: stretch;
+  align-items: stretch;
+}
+.locale-card {
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.locale-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+.locale-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+.locale-content {
+  padding: 15px 10px 10px 10px;
+}
+.locale-type {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: #ffe5d6;
+  color: #e95e0f;
+  margin-bottom: 10px;
+  margin-right: 6px;
+}
+.locale-content h3 {
+  margin: 8px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+.locale-content p {
+  margin: 0 0 10px 0;
+  font-size: 1rem;
+  color: #555;
+}
+.locale-actions a {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #e95e0f, #dc773c);
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.locale-actions a:hover {
+  background: linear-gradient(135deg, #dc773c, #e95e0f);
+}
+.link {
+  display: block;
+  text-align: center;
+  margin-top: 32px;
+  font-weight: 600;
+  color: #e95e0f;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
 }
 
 /* Footer */
@@ -319,28 +411,75 @@ footer .socials a:hover {
     </div>
   </section>
 
-  <!-- Attrazioni -->
-  <section class="cards">
-    <a href="chiesamadre.html" class="card">
-      <img class="card-img" src="img/chiesamadre/foto1.jpg" alt="Chiesa Madre">
-      <h3>Chiesa Madre</h3>
-      <span class="card-btn">Scopri</span>
-    </a>
-    <a href="castello.html" class="card">
-      <img class="card-img" src="img/castello/foto5.jpg" alt="Castello">
-      <h3>Castello Arabo - Normanno</h3>
-      <span class="card-btn">Scopri</span>
-    </a>
-    <a href="spiaggia.html" class="card">
-      <img class="card-img" src="img/spiaggia/foto1.jpg" alt="Spiaggia">
-      <h3>Spiaggia di San Marco</h3>
-      <span class="card-btn">Scopri</span>
-    </a>
-    <a href="gesuemaria.html" class="card">
-      <img class="card-img" src="img/gesuemaria/foto1.jpg" alt="Gesù e Maria">
-      <h3>Chiesa di Gesù e Maria</h3>
-      <span class="card-btn">Scopri</span>
-    </a>
+  <!-- Attrazioni Turistiche -->
+  <section class="attrazioni-wrapper" style="max-width: 1200px; margin: 60px auto 48px auto; padding: 0 20px;">
+    <h2 style="text-align: center; margin-top: 0; margin-bottom: 32px; font-size: 2rem; color: #e95e0f;">Attrazioni Turistiche</h2>
+    <div class="cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; justify-items: stretch; align-items: stretch;">
+      <a href="chiesamadre.html" class="card">
+        <img class="card-img" src="img/chiesamadre/foto1.jpg" alt="Chiesa Madre">
+        <h3>Chiesa Madre</h3>
+        <span class="card-btn">Scopri</span>
+      </a>
+      <a href="castello.html" class="card">
+        <img class="card-img" src="img/castello/foto5.jpg" alt="Castello">
+        <h3>Castello Arabo - Normanno</h3>
+        <span class="card-btn">Scopri</span>
+      </a>
+      <a href="spiaggia.html" class="card">
+        <img class="card-img" src="img/spiaggia/foto1.jpg" alt="Spiaggia">
+        <h3>Spiaggia di San Marco</h3>
+        <span class="card-btn">Scopri</span>
+      </a>
+      <a href="gesuemaria.html" class="card">
+        <img class="card-img" src="img/gesuemaria/foto1.jpg" alt="Gesù e Maria">
+        <h3>Chiesa di Gesù e Maria</h3>
+        <span class="card-btn">Scopri</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Locali -->
+  <section class="locali-wrapper">
+    <h2><a href="locali.html" style="color: #e95e0f; text-decoration: none;">Ristoranti &amp; Bar</a></h2>
+    <div class="locali-grid">
+      <div class="locale-card">
+        <img src="img/locali/duina.jpg" class="locale-img" alt="Bar Centrale">
+        <div class="locale-content">
+          <span class="locale-type">Bar</span>
+          <span class="locale-type">Tavola Calda</span>
+          <h3>Bar Duina</h3>
+          <p>Via Duomo 1</p>
+          <div class="locale-actions">
+            <a href="https://www.google.com/search?q=Bar+Duina+Calatabiano" target="_blank" rel="noopener">Scopri di più</a>
+          </div>
+        </div>
+      </div>
+      <div class="locale-card">
+        <img src="img/locali/tana.jpg" class="locale-img" alt="Ristorante Tipico">
+        <div class="locale-content">
+          <span class="locale-type">Ristorante</span>
+          <span class="locale-type">Pizzeria</span>
+          <h3>Tana dell'Orso</h3>
+          <p>Piazza Vittorio Emanuele 20/21</p>
+          <div class="locale-actions">
+            <a href="https://www.google.com/search?q=Tana+dell%27Orso+Calatabiano" target="_blank" rel="noopener">Scopri di più</a>
+          </div>
+        </div>
+      </div>
+      <div class="locale-card">
+        <img src="img/locali/blueice.jpg" class="locale-img" alt="Pizzeria">
+        <div class="locale-content">
+          <span class="locale-type">Ristorante</span>
+          <span class="locale-type">Pesce</span>
+          <span class="locale-type">Pizzeria</span>
+          <h3>Blue Ice</h3>
+          <p>Via San Marco - Spiaggia</p>
+          <div class="locale-actions">
+            <a href="https://www.ristoranteblueice.it" target="_blank" rel="noopener">Scopri di più</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->

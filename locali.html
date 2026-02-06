@@ -145,8 +145,14 @@
     /* Locali cards */
     .locali-wrapper {
       max-width: 1200px;
-      margin: 40px auto;
+      margin: 60px auto 40px auto;
       padding: 0 20px;
+    }
+    .locali-wrapper h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #222;
     }
     .locali-grid {
       display: grid;
@@ -157,12 +163,13 @@
       background: white;
       border-radius: 6px;
       overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
+      /* Mantieni altre proprietà esistenti */
     }
     .locale-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 16px 35px rgba(0,0,0,0.18);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     }
     .locale-img {
       width: 100%;
@@ -186,6 +193,7 @@
       background: #ffe5d6;
       color: #e95e0f;
       margin-bottom: 10px;
+      margin-right: 6px;
     }
     .locale-content p {
       font-size: 0.9rem;
@@ -198,23 +206,11 @@
       font-weight: 600;
       color: #e95e0f;
     }
-
-    /* Description */
-    .description {
-      padding: 20px;
-      max-width: 900px;
-      margin: 20px auto 40px auto;
-      background-color: rgba(255,255,255,0.8);
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    /* Button link */
-    .link {
+    /* Button link sotto locali */
+    .locali-button {
       display: block;
       width: fit-content;
-      margin: 40px auto;
+      margin: 30px auto 0 auto;
       padding: 10px 22px;
       background: linear-gradient(135deg, #dc773c, #e95e0f);
       color: white;
@@ -225,10 +221,21 @@
       text-align: center;
       transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
     }
-    .link:hover {
+    .locali-button:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(233,94,15,0.4);
       background: linear-gradient(135deg, #e95e0f, #dc773c);
+    }
+
+    /* Description */
+    .description {
+      padding: 20px;
+      max-width: 900px;
+      margin: 20px auto 40px auto;
+      background-color: rgba(255,255,255,0.8);
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
     /* Lightbox */
@@ -303,7 +310,7 @@
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn">Esplora ▾</a>
           <ul class="dropdown-content">
-                      <li><a href="locali.html" class="active">Bar & Ristoranti</a></li>
+            <li><a href="locali.html" class="active">Bar & Ristoranti</a></li>
             <li><a href="chiesamadre.html">Chiesa Madre</a></li>
             <li><a href="castello.html">Castello</a></li>
             <li><a href="spiaggia.html">Spiaggia</a></li>
@@ -320,7 +327,11 @@
     <h1>Ristoranti & Bar</h1>
   </section>
 
+  <!-- Presumed Attrazioni section here -->
+
+  <!-- Locali section, moved after Attrazioni -->
   <section class="locali-wrapper">
+    <h2>Ristoranti & Bar</h2>
     <div class="locali-grid">
       <div class="locale-card">
         <img src="img/locali/duina.jpg" class="locale-img" alt="Bar Centrale">
@@ -362,11 +373,8 @@
         </div>
       </div>
     </div>
+    <a href="index.html" class="locali-button">Torna alla Home</a>
   </section>
-
-  <!-- Link -->
-  <a class="link" href="index.html">Torna alla Home</a>
-
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
