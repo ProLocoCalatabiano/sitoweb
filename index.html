@@ -164,7 +164,7 @@ body {
   height: 100%;
   width: 100%;
   background: white;
-  border-radius: 5px;
+  border-radius: 6px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -192,19 +192,28 @@ body {
   word-wrap: break-word;
 }
 .card-btn {
-  display: inline-block;
-  margin: 10px 0 15px 0;
-  padding: 8px 16px;
-  background: linear-gradient(45deg, #dc773c, #e95e0f);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 15px auto 20px auto;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #e95e0f, #dc773c);
   color: white;
-  border-radius: 6px;
+  border: none;
+  border-radius: 50px;
   font-weight: 600;
-  transition: background 0.3s;
-  width: auto;
-  align-self: center;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  text-decoration: none;
 }
+
 .card-btn:hover {
-  background: linear-gradient(45deg, #e95e0f, #dc773c);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(233,94,15,0.4);
+  background: linear-gradient(135deg, #dc773c, #e95e0f);
 }
 
 /* Footer */
@@ -290,6 +299,7 @@ footer .socials a:hover {
       <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">Esplora ▾</a>
         <ul class="dropdown-content">
+          <li><a href="locali.html">Bar & Ristoranti</a></li>
           <li><a href="chiesamadre.html">Chiesa Madre</a></li>
           <li><a href="castello.html">Castello</a></li>
           <li><a href="spiaggia.html">Spiaggia</a></li>

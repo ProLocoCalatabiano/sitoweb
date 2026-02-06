@@ -154,19 +154,22 @@
     /* Button link */
     .link {
       display: block;
-      text-align: center;
       width: fit-content;
       margin: 40px auto;
-      padding: 12px 24px;
-      background: linear-gradient(45deg, #dc773c, #e95e0f);
+      padding: 10px 22px;
+      background: linear-gradient(135deg, #dc773c, #e95e0f);
       color: white;
-      border-radius: 8px;
+      border-radius: 25px;
       text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
     }
     .link:hover {
-      background: linear-gradient(45deg, #e95e0f, #dc773c);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(233,94,15,0.4);
+      background: linear-gradient(135deg, #e95e0f, #dc773c);
     }
 
     /* Lightbox */
@@ -241,6 +244,7 @@
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn">Esplora ▾</a>
           <ul class="dropdown-content">
+            <li><a href="locali.html">Bar & Ristoranti</a></li>
             <li><a href="chiesamadre.html">Chiesa Madre</a></li>
             <li><a href="castello.html">Castello</a></li>
             <li><a href="spiaggia.html" class="active">Spiaggia</a></li>
@@ -270,7 +274,7 @@
   </div>
 
   <!-- Link -->
-  <a class="link" href="index.html">⬅ Torna alla Home</a>
+  <a class="link" href="index.html">Torna alla Home</a>
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
@@ -331,8 +335,5 @@
 <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
-</a>
-<div class="chatbot-label">
-  💬 Chatta con noi
 </body>
 </html>
