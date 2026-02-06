@@ -323,10 +323,17 @@
 
     /* Footer */
     footer.info {
-    background: #2e2e2f;
-    color: #ccc;
-    padding: 40px 20px;
-    text-align: center;
+      margin: 0;
+      padding: 40px 0;
+      background-color: #2e2e2f;
+      color: #ccc;
+      text-align: center;
+      width: 100vw;
+      box-sizing: border-box;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
     }
     footer.info h2 {
     color: white;
@@ -343,15 +350,15 @@
     footer .socials {
     margin-top: 20px;
     }
-    ooter .socials a {
+    footer .socials a {
     margin: 0 10px;
     font-size: 1.5rem;
     color: white;
     transition: color 0.3s;
-    }
-    footer .socials a:hover {
-    color: #e2ac6f;
-    } 
+  }
+  footer .socials a:hover {
+  color: #e2ac6f;
+  }
   </style>
 </head>
 <body>
@@ -427,7 +434,30 @@
 
     <!-- Link -->
   <a class="link" href="index.html">Torna alla Home</a>
+  </section>
 
+  <footer class="info">
+    <h2>Pro Loco Calatabiano APS</h2>
+    <p>
+      📍 <a href="https://www.google.com/maps/place/Vicolo+Guglielmo+Oberdan,+95011+Calatabiano+CT" target="_blank" rel="noopener">
+        Vicolo Guglielmo Oberdan - 95011 Calatabiano (CT)
+      </a>
+    </p>
+    <p>
+      ✉️ <a href="mailto:prolococalatabiano.social@gmail.com">prolococalatabiano.social@gmail.com</a>
+    </p>
+    <p>
+      📞 <a href="tel:+393803036621">+39 380 303 6621</a>
+    </p>
+    <p>
+      🕒 Lun - Dom 9:00 - 13:00 / 15:00 - 19:00
+    </p>
+    <div class="socials">
+      <a href="https://www.facebook.com/prolococalatabiano/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/pro_loco_calatabiano_aps/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+    </div>
+    </p>
+  </footer>
   <script>
   (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
   </script>
