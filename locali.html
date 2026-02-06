@@ -103,7 +103,7 @@
 
     /* Hero */
     .hero {
-      height: 35vh;
+      height: 30vh;
       background: linear-gradient(135deg, #dc773c, #e95e0f);
       display: flex;
       align-items: center;
@@ -120,28 +120,6 @@
       transform: translateY(30px);
     }
 
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      grid-auto-rows: 200px;
-      gap: 15px;
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 5px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-      cursor: pointer;
-    }
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
     /* Locali cards */
     .locali-wrapper {
       max-width: 1200px;
@@ -165,7 +143,6 @@
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
-      /* Mantieni altre proprietà esistenti */
     }
     .locale-card:hover {
       transform: translateY(-6px);
@@ -206,8 +183,9 @@
       font-weight: 600;
       color: #e95e0f;
     }
-    /* Button link sotto locali */
-    .locali-button {
+
+    /* Link sotto locali */
+    .link {
       display: block;
       width: fit-content;
       margin: 30px auto 0 auto;
@@ -221,39 +199,6 @@
       text-align: center;
       transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
     }
-    .locali-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(233,94,15,0.4);
-      background: linear-gradient(135deg, #e95e0f, #dc773c);
-    }
-
-    /* Description */
-    .description {
-      padding: 20px;
-      max-width: 900px;
-      margin: 20px auto 40px auto;
-      background-color: rgba(255,255,255,0.8);
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    /* Button link */
-    .link {
-      display: block;
-      width: fit-content;
-      margin: 40px auto;
-      padding: 10px 22px;
-      background: linear-gradient(135deg, #dc773c, #e95e0f);
-      color: white;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-align: center;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
-    }
-
     .link:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(233,94,15,0.4);
@@ -364,7 +309,7 @@ footer .socials a:hover {
         <li class="dropdown">
           <a href="javascript:void(0)" class="dropbtn">Esplora ▾</a>
           <ul class="dropdown-content">
-            <li><a href="locali.html">Bar & Ristoranti</a></li>
+            <li><a href="locali.html" class="active">Ristoranti & Bar</a></li>
             <li><a href="chiesamadre.html">Chiesa Madre</a></li>
             <li><a href="castello.html">Castello</a></li>
             <li><a href="spiaggia.html">Spiaggia</a></li>
@@ -381,7 +326,7 @@ footer .socials a:hover {
     <h1>Ristoranti & Bar</h1>
   </section>
 
-  <!-- Locali section on home -->
+  <!-- Locali section -->
   <section class="locali-wrapper">
     <div class="locali-grid">
       <div class="locale-card">
@@ -411,7 +356,7 @@ footer .socials a:hover {
       </div>
 
       <div class="locale-card">
-        <img src="img/locali/blueice.jpg" class="locale-img" alt="Pizzeria">
+        <img src="img/locali/blueice.jpg" class="locale-img" alt="Blue Ice">
         <div class="locale-content">
           <span class="locale-type">Ristorante</span>
           <span class="locale-type">Pesce</span>
@@ -423,10 +368,35 @@ footer .socials a:hover {
           </div>
         </div>
       </div>
+
+      <div class="locale-card">
+        <img src="img/locali/giannino.jpg" class="locale-img" alt="Bar Giannino">
+        <div class="locale-content">
+          <span class="locale-type">Bar</span>
+
+          <h3>Bar Giannino</h3>
+          <p>Piazza Vittorio Emanuele 6</p>
+          <div class="locale-actions">
+            <a href="https://www.google.com/search?q=Bar+Giannino+Calatabiano" target="_blank" rel="noopener">Scopri di più →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="locale-card">
+        <img src="img/locali/nnimaria.jpg" class="locale-img" alt="Nnì Maria">
+        <div class="locale-content">
+          <span class="locale-type">Pizzeria</span>
+          <h3>Nnì Maria</h3>
+          <p>Piazza Armando Diaz 7</p>
+          <div class="locale-actions">
+            <a href="https://www.google.com/search?q=Nni+MAria+Calatabiano" target="_blank" rel="noopener">Scopri di più →</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Link -->
-  <a class="link" href="index.html">Torna alla Home</a>
+    <a class="link" href="index.html">Torna alla Home</a>
   </section>
 
   <footer class="info">
