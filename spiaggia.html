@@ -165,6 +165,21 @@
       text-align: center;
     }
 
+    /* Mappa integrata */
+    .map-container {
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      padding: 0 20px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
+
     /* Button link */
     .link {
       display: block;
@@ -278,6 +293,21 @@
     footer .socials a:hover {
     color: #e2ac6f;
     }
+
+    /* Link testuale "Portami qui" */
+    .text-link {
+      display: block;
+      margin: 20px auto;
+      width: fit-content;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #e95e0f;
+      text-decoration: none;
+    }
+
+    .text-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -319,6 +349,15 @@
   <div class="description">
     Inserisci qui una breve descrizione della Spiaggia di San Marco
   </div>
+
+<div class="map-container">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12608.900912385769!2d15.240475599028441!3d37.808193144309904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13140fb8aa6cef31%3A0xca30a42c898f061e!2sSpiaggia%20di%20S.%20Marco!5e0!3m2!1sit!2sit!4v1770572005058!5m2!1sit!2sit"
+    allowfullscreen
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
 
   <!-- Link -->
   <a class="link" href="index.html">Torna alla Home</a>
