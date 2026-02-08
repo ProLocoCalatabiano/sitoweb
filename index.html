@@ -387,6 +387,21 @@ footer .socials a:hover {
     width: 100%;
   }
 }
+
+/* Overlay link per rendere la card cliccabile senza modificare la struttura */
+.locale-card {
+  position: relative;
+}
+
+.locale-card a.card-overlay-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -9999px; /* nasconde il testo del link */
+  z-index: 2;
+}
   </style>
 </head>
 <body>
@@ -424,6 +439,7 @@ footer .socials a:hover {
     <h2 style="text-align: center; margin-top: 0; margin-bottom: 32px; font-size: 2rem; color: #e95e0f;">Attrazioni Turistiche</h2>
     <div class="locali-grid">
       <div class="locale-card">
+        <a href="chiesamadre.html" class="card-overlay-link">Vai a Chiesa Madre</a>
         <img src="img/chiesamadre/chiesamadre1.webp" class="locale-img" alt="Chiesa Madre">
         <div class="locale-content">
           <h3>Chiesa Madre</h3>
@@ -433,6 +449,7 @@ footer .socials a:hover {
         </div>
       </div>
       <div class="locale-card">
+        <a href="castello.html" class="card-overlay-link">Vai a Castello Arabo - Normanno</a>
         <img src="img/castello/castello2.webp" class="locale-img" alt="Castello">
         <div class="locale-content">
           <h3>Castello Arabo - Normanno</h3>
@@ -442,6 +459,7 @@ footer .socials a:hover {
         </div>
       </div>
       <div class="locale-card">
+        <a href="spiaggia.html" class="card-overlay-link">Vai a Spiaggia di San Marco</a>
         <img src="img/spiaggia/sanmarco3.webp" class="locale-img" alt="San MArco">
         <div class="locale-content">
           <h3>Spiaggia di San Marco</h3>
@@ -451,6 +469,7 @@ footer .socials a:hover {
         </div>
       </div>
       <div class="locale-card">
+        <a href="gesuemaria.html" class="card-overlay-link">Vai a Chiesa di Gesù e Maria</a>
         <img src="img/gesuemaria/gesuemaria1.webp" class="locale-img" alt="Gesù e Maria">
         <div class="locale-content">
           <h3>Chiesa di Gesù e Maria</h3>
@@ -467,6 +486,7 @@ footer .socials a:hover {
     <h2><a href="locali.html" style="color: #e95e0f; text-decoration: none;">Ristoranti &amp; Bar</a></h2>
     <div class="locali-grid">
       <div class="locale-card">
+        <a href="https://www.google.com/search?q=Bar+Duina+Calatabiano" class="card-overlay-link" target="_blank" rel="noopener">Vai a Bar Duina</a>
         <img src="img/locali/duina.webp" class="locale-img" alt="Bar Duina">
         <div class="locale-content">
           <span class="locale-type">Bar</span>
@@ -479,6 +499,7 @@ footer .socials a:hover {
         </div>
       </div>
       <div class="locale-card">
+        <a href="https://www.google.com/search?q=Tana+dell%27Orso+Calatabiano" class="card-overlay-link" target="_blank" rel="noopener">Vai a Tana dell'Orso</a>
         <img src="img/locali/tana.webp" class="locale-img" alt="Tana Dell'Orso">
         <div class="locale-content">
           <span class="locale-type">Ristorante</span>
@@ -491,6 +512,7 @@ footer .socials a:hover {
         </div>
       </div>
       <div class="locale-card">
+        <a href="https://www.ristoranteblueice.it" class="card-overlay-link" target="_blank" rel="noopener">Vai a Blue Ice</a>
         <img src="img/locali/blueice.webp" class="locale-img" alt="Blue Ice">
         <div class="locale-content">
           <span class="locale-type">Ristorante</span>
