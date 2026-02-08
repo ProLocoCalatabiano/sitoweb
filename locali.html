@@ -297,6 +297,21 @@ footer .socials a {
 footer .socials a:hover {
   color: #e2ac6f;
 }
+
+/* Overlay link per rendere cliccabile tutta la card senza modificare struttura */
+.locale-card {
+  position: relative;
+}
+
+.locale-card a.card-overlay-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -9999px; /* nasconde il testo del link */
+  z-index: 2;
+}
 </style>
 </head>
 <body>
@@ -330,6 +345,7 @@ footer .socials a:hover {
   <section class="locali-wrapper">
     <div class="locali-grid">
       <div class="locale-card">
+        <a href="https://www.google.com/search?q=Bar+Duina+Calatabiano" target="_blank" rel="noopener" class="card-overlay-link">Vai a Bar Duina</a>
         <img src="img/locali/duina.webp" class="locale-img" alt="Bar Centrale">
         <div class="locale-content">
           <span class="locale-type">Bar</span>
@@ -343,6 +359,7 @@ footer .socials a:hover {
       </div>
 
       <div class="locale-card">
+        <a href="https://www.google.com/search?q=Tana+dell%27Orso+Calatabiano" target="_blank" rel="noopener" class="card-overlay-link">Vai a Tana dell'Orso</a>
         <img src="img/locali/tana.webp" class="locale-img" alt="Ristorante Tipico">
         <div class="locale-content">
           <span class="locale-type">Ristorante</span>
@@ -356,6 +373,7 @@ footer .socials a:hover {
       </div>
 
       <div class="locale-card">
+        <a href="https://www.ristoranteblueice.it" target="_blank" rel="noopener" class="card-overlay-link">Vai a Blue Ice</a>
         <img src="img/locali/blueice.webp" class="locale-img" alt="Blue Ice">
         <div class="locale-content">
           <span class="locale-type">Ristorante</span>
@@ -370,6 +388,7 @@ footer .socials a:hover {
       </div>
 
       <div class="locale-card">
+        <a href="https://www.google.com/search?q=Bar+Giannino+Calatabiano" target="_blank" rel="noopener" class="card-overlay-link">Vai a Bar Giannino</a>
         <img src="img/locali/giannino.webp" class="locale-img" alt="Bar Giannino">
         <div class="locale-content">
           <span class="locale-type">Bar</span>
@@ -383,6 +402,7 @@ footer .socials a:hover {
       </div>
 
       <div class="locale-card">
+        <a href="https://www.google.com/search?q=Nni+MAria+Calatabiano" target="_blank" rel="noopener" class="card-overlay-link">Vai a Nnì Maria</a>
         <img src="img/locali/nnimaria.webp" class="locale-img" alt="Nnì Maria">
         <div class="locale-content">
           <span class="locale-type">Pizzeria</span>
