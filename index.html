@@ -240,6 +240,14 @@ body {
   justify-items: stretch;
   align-items: stretch;
 }
+
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-items: stretch;
+  align-items: stretch;
+}
 .locale-img {
   width: 100%;
   height: auto;
@@ -414,11 +422,8 @@ footer .socials a:hover {
       <li class="dropdown">
         <a href="javascript:void(0)" class="dropbtn">Esplora ▾</a>
         <ul class="dropdown-content">
-          <li><a href="locali.html">Ristoranti & Bar</a></li>
-          <li><a href="chiesamadre.html">Chiesa Madre</a></li>
-          <li><a href="castello.html">Castello</a></li>
-          <li><a href="spiaggia.html">Spiaggia</a></li>
-          <li><a href="gesuemaria.html">Gesù e Maria</a></li>
+            <li><a href="attrazioni.html">Attrazioni</a></li>
+            <li><a href="locali.html">Ristoranti & Bar</a></li>
         </ul>
       </li>
       <li><a href="chisiamo.html">Chi siamo</a></li>
@@ -437,7 +442,7 @@ footer .socials a:hover {
   <!-- Attrazioni Turistiche -->
   <section class="attrazioni-wrapper" style="max-width: 1200px; margin: 60px auto 48px auto; padding: 0 20px;">
     <h2 style="text-align: center; margin-top: 0; margin-bottom: 32px; font-size: 2rem; color: #e95e0f;">Attrazioni Turistiche</h2>
-    <div class="locali-grid">
+    <div class="grid-cards">
       <div class="locale-card">
         <a href="chiesamadre.html" class="card-overlay-link">Vai a Chiesa Madre</a>
         <img src="img/chiesamadre/chiesamadre1.webp" class="locale-img" alt="Chiesa Madre">
@@ -479,6 +484,7 @@ footer .socials a:hover {
         </div>
       </div>
     </div>
+    <a href="attrazioni.html" class="link">Mostra altre</a>
   </section>
 
   <!-- Locali -->
