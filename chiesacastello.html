@@ -4,9 +4,9 @@
   <meta name="robots" content="noindex, nofollow">  <!-- toglie indicizzazione -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Castello Arabo Normanno - Pro Loco Calatabiano</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <title>Chiesa di San Filippo - Pro Loco Calatabiano</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -66,7 +66,7 @@
     }
     .dropbtn {
       cursor: pointer;
-      font-weight: 600;
+      user-select: none;
       color: #333;
       text-decoration: none;
       background: none;
@@ -81,9 +81,9 @@
       min-width: 160px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       z-index: 1001;
+      list-style: none;
       padding: 0;
       margin: 0;
-      list-style: none;
       border-radius: 4px;
     }
     .dropdown-content li a {
@@ -104,7 +104,7 @@
     /* Hero */
     .hero {
       height: 60vh;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/castello/castello2.webp') center/cover no-repeat;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/chiesacastello/chiesacastello1.webp') center/cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -117,7 +117,7 @@
       margin: 0;
     }
 
-    /* Gallery - CSS Grid */
+    /* Gallery - updated to grid layout */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -129,19 +129,11 @@
       padding: 0 10px;
     }
 
-    @media (max-width: 900px) {
-      .gallery { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
-    }
-
     @media (max-width: 600px) {
       .gallery {
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
       }
-    }
-
-    @media (max-width: 500px) {
-      .gallery { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
     }
 
     .gallery img {
@@ -156,6 +148,7 @@
       cursor: pointer;
       transition: transform 0.2s ease;
     }
+
     .gallery img:hover,
     .gallery img:focus {
       transform: scale(1.02);
@@ -187,6 +180,7 @@
       text-align: center;
       transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
     }
+
     .link:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 20px rgba(233,94,15,0.4);
@@ -253,7 +247,7 @@
     }
     .lightbox-left { left: 0; }
     .lightbox-right { right: 0; }
-
+    
     /* Footer */
     footer.info {
     background: #2e2e2f;
@@ -272,34 +266,34 @@
     }
     footer.info a:hover {
     color: white;
-  }
-  footer .socials {
-  margin-top: 20px;
-  }
-  footer .socials a {
-  margin: 0 10px;
-  font-size: 1.5rem;
-  color: white;
-  transition: color 0.3s;
-  }
-  footer .socials a:hover {
-  color: #e2ac6f;
-  }
+    }
+    footer .socials {
+    margin-top: 20px;
+    }
+    footer .socials a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    color: white;
+    transition: color 0.3s;
+    }
+    footer .socials a:hover {
+    color: #e2ac6f;
+    }
 
-  /* Mappa integrata */
-  .map-container {
-    max-width: 900px;
-    margin: 0 auto 60px auto;
-    padding: 0 20px;
-  }
+    /* Mappa integrata */
+    .map-container {
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      padding: 0 20px;
+    }
 
-  .map-container iframe {
-    width: 100%;
-    height: 350px;
-    border: 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  }
+    .map-container iframe {
+      width: 100%;
+      height: 350px;
+      border: 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    }
   </style>
 </head>
 <body>
@@ -313,10 +307,10 @@
           <a href="javascript:void(0)" class="dropbtn">Esplora ▾</a>
           <ul class="dropdown-content">
             <li><a href="chiesamadre.html">Chiesa Madre</a></li>
-            <li><a href="castello.html" class="active">Castello</a></li>
+            <li><a href="castello.html">Castello</a></li>
             <li><a href="spiaggia.html">Spiaggia</a></li>
             <li><a href="gesuemaria.html">Gesù e Maria</a></li>
-            <li><a href="chiesacastello.html">Chiesa di San Filippo</a></li>
+            <li><a href="chiesamadre.html" class="active">Chiesa di San Filippo</a></li>
           </ul>
         </li>
         <li><a href="chisiamo.html">Chi siamo</a></li>
@@ -326,27 +320,47 @@
 
   <!-- Hero -->
   <section class="hero">
-    <h1>Castello Arabo - Normanno</h1>
+    <h1>Chiesa di San Filippo Siriaco</h1>
   </section>
 
   <!-- Gallery -->
   <div class="gallery">
-    <img src="img/castello/castello1.webp" alt="Castello 1">
-    <img src="img/castello/castello2.webp" alt="Castello 2">
-    <img src="img/castello/castello3.webp" alt="Castello 3">
-    <img src="img/castello/castello4.webp" alt="Castello 4">
-    <img src="img/castello/castello5.webp" alt="Castello 5">
+    <img src="img/chiesacastello/chiesacastello1.webp" alt="foto 1">
+    <img src="img/chiesacastello/chiesacastello2.webp" alt="foto 2">
+    <img src="img/chiesacastello/chiesacastello3.webp" alt="foto 3">
+    <img src="img/chiesacastello/chiesacastello4.webp" alt="foto 4">
+    <img src="img/chiesacastello/chiesacastello5.webp" alt="foto 5">
+    <img src="img/chiesacastello/chiesacastello6.webp" alt="foto 6">
+    <img src="img/chiesacastello/chiesacastello7.webp" alt="foto 7">
+    <img src="img/chiesacastello/chiesacastello8.webp" alt="foto 8">
+    <img src="img/chiesacastello/chiesacastello9.webp" alt="foto 9">
+    <img src="img/chiesacastello/chiesacastello10.webp" alt="foto 10">
+    <img src="img/chiesacastello/chiesacastello11.webp" alt="foto 11">
+    <img src="img/chiesacastello/chiesacastello12.webp" alt="foto 12">
+    <img src="img/chiesacastello/chiesacastello13.webp" alt="foto 13">
+    <img src="img/chiesacastello/chiesacastello14.webp" alt="foto 14">
+    <img src="img/chiesacastello/chiesacastello15.webp" alt="foto 15">
+    <img src="img/chiesacastello/chiesacastello16.webp" alt="foto 16">
+    <img src="img/chiesacastello/chiesacastello17.webp" alt="foto 17">
+    <img src="img/chiesacastello/chiesacastello18.webp" alt="foto 18">
+    <img src="img/chiesacastello/chiesacastello19.webp" alt="foto 19">
+    <img src="img/chiesacastello/chiesacastello20.webp" alt="foto 20">
+    <img src="img/chiesacastello/chiesacastello21.webp" alt="foto 21">
+    <img src="img/chiesacastello/chiesacastello22.webp" alt="foto 22">
+    <img src="img/chiesacastello/chiesacastello23.webp" alt="foto 23">
+    <img src="img/chiesacastello/chiesacastello24.webp" alt="foto 24">
+    <img src="img/chiesacastello/chiesacastello25.webp" alt="foto 25">
   </div>
 
   <!-- Description -->
   <div class="description">
-    Inserisci qui una breve descrizione del Castello Arabo - Normanno
+    Inserisci qui una breve descrizione della chiesa di San Filippo Siriaco
   </div>
 
   <!-- Map -->
   <div class="map-container">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.3626050122925!2d15.22520217710082!3d37.82839620906756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13141002c2af1d03%3A0x33ad765762e7215f!2sCastello%20di%20Calatabiano!5e0!3m2!1sit!2sit!4v1770572375785!5m2!1sit!2sit"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.5540181657993!2d15.224391377100687!3d37.82391400932589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13140ffd8e83a899%3A0x698c916d1c38faa6!2sChiesa%20di%20Ges%C3%B9%20e%20Maria!5e0!3m2!1sit!2sit!4v1770572261890!5m2!1sit!2sit"
       allowfullscreen
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade">
@@ -354,7 +368,7 @@
   </div>
 
   <!-- Link -->
-  <a class="link" href="attrazioni.html">Torna indietro</a>
+  <a class="link" href="index.html">Torna alla Home</a>
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox">
@@ -380,12 +394,12 @@
     </div>
   </footer>
   <script>
+    let currentIndex = 0;
+    const images = Array.from(document.querySelectorAll('.gallery img'));
+
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.close');
-
-    let currentIndex = 0;
-    const images = Array.from(document.querySelectorAll('.gallery img'));
 
     document.querySelectorAll('.gallery img').forEach(img => {
       img.addEventListener('click', () => {
