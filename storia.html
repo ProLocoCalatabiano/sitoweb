@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta name="robots" content="noindex, nofollow">  <!-- toglie indicizzazione -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storia e Cultura - Pro Loco Calatabiano</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background: #f5f7fa;
+    }
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px 20px;
+      width: 100%;
+    }
+    .nav-container img.nav-logo {
+      margin-right: auto;
+    }
+    .nav-container .nav-links {
+      margin-left: auto;
+      margin-right: 40px;
+    }
+    .nav-logo {
+      height: 60px;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #333;
+      transition: color 0.3s;
+    }
+    .nav-links li a:hover,
+    .nav-links li a.active {
+      color: #e95e0f;
+    }
+
+    /* Dropdown menu moderno */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropbtn {
+      cursor: pointer;
+      font-weight: 600;
+      color: #333;
+      text-decoration: none;
+      background: none;
+      border: none;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      z-index: 1001;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      border-radius: 4px;
+    }
+    .dropdown-content li a {
+      color: #333;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-weight: 400;
+    }
+    .dropdown-content li a:hover {
+      background-color: #f1f1f1;
+      color: #e95e0f;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Hero */
+    .hero {
+      height: 30vh;
+      background: linear-gradient(135deg, #dc773c, #e95e0f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      text-align: center;
+      width: 100%;
+      transform: translateY(30px);
+    }
+
+    /* Locali cards */
+    .locali-wrapper {
+      max-width: 1200px;
+      margin: 60px auto 40px auto;
+      padding: 0 20px;
+    }
+    .locali-wrapper h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2rem;
+      color: #222;
+    }
+    .locali-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+    .locale-card {
+      background: white;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .locale-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    .locale-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .locale-content {
+      padding: 18px;
+    }
+    .locale-content h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+      color: #222;
+    }
+    .locale-type {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #ffe5d6;
+      color: #e95e0f;
+      margin-bottom: 10px;
+      margin-right: 6px;
+    }
+    .locale-content p {
+      font-size: 0.9rem;
+      color: #555;
+      margin: 8px 0 14px 0;
+    }
+    .locale-actions a {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #e95e0f;
+    }
+
+    /* Link sotto locali */
+    .link {
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0 auto;
+      padding: 10px 22px;
+      background: linear-gradient(135deg, #dc773c, #e95e0f);
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
+    }
+    .link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(233,94,15,0.4);
+      background: linear-gradient(135deg, #e95e0f, #dc773c);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+    .lightbox-content {
+      display: block;
+      max-width: 90%;
+      max-height: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 2100;
+    }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      color: rgba(255,255,255,0.6);
+      font-weight: bold;
+      font-size: 30px;
+      user-select: none;
+      transition: 0.3s;
+      z-index: 2100;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .prev:hover, .next:hover {
+      color: rgba(255,255,255,0.6);
+    }
+    .lightbox-left, .lightbox-right {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      cursor: pointer;
+      z-index: 2000;
+    }
+    .lightbox-left { left: 0; }
+    .lightbox-right { right: 0; }
+
+/* Footer */
+footer.info {
+  background: #2e2e2f;
+  color: #ccc;
+  padding: 40px 20px;
+  text-align: center;
+}
+footer.info h2 {
+  color: white;
+  margin-bottom: 15px;
+}
+footer.info a {
+  color: #e2ac6f;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+footer.info a:hover {
+  color: white;
+}
+footer .socials {
+  margin-top: 20px;
+}
+footer .socials a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: white;
+  transition: color 0.3s;
+}
+footer .socials a:hover {
+  color: #e2ac6f;
+}
+
+/* Overlay link per rendere cliccabile tutta la card senza modificare struttura */
+.locale-card {
+  position: relative;
+}
+
+.locale-card a.card-overlay-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -9999px; /* nasconde il testo del link */
+  z-index: 2;
+}
+</style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <img class="nav-logo" src="img/logo.png" alt="Logo Pro Loco">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Esplora ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="attrazioni.html">Attrazioni</a></li>
+            <li><a href="locali.html" class="active">Ristoranti & Bar</a></li>
+          </ul>
+        </li>
+        <li><a href="chisiamo.html">Chi siamo</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Storia e Cultura</h1>
+  </section>
+
+  <!-- Storia e Cultura section -->
+  <section class="locali-wrapper">
+
+    <div class="locali-grid">
+
+      <div class="locale-card">
+        <img src="img/storia/castello.jpg" class="locale-img" alt="Castello di Calatabiano">
+        <div class="locale-content">
+          <span class="locale-type">Storia</span>
+          <span class="locale-type">Tradizioni</span>
+          <h3>La festa di San Filippo Siriaco</h3>
+          <p>
+            Descrizione festa
+          </p>
+        </div>
+      </div>
+
+      <div class="locale-card">
+        <img src="img/storia/chiese.jpg" class="locale-img" alt="Chiese di Calatabiano">
+        <div class="locale-content">
+          <span class="locale-type">Monumenti</span>
+          <h3>Palazzo Gravina</h3>
+          <p>
+            Nel centro storico di Calatabiano si trovano diverse chiese di grande valore
+            artistico e religioso, testimonianza della tradizione e della fede della
+            comunità locale nel corso dei secoli.
+          </p>
+        </div>
+      </div>
+
+      <div class="locale-card">
+        <img src="img/storia/tradizioni.jpg" class="locale-img" alt="Tradizioni popolari">
+        <div class="locale-content">
+          <span class="locale-type">Tradizioni</span>
+          <h3>Sagra delle nespole</h3>
+          <p>
+            Descrizione sagra
+          </p>
+        </div>
+      </div>
+
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <a class="link" href="index.html">Torna alla Home</a>
+  </section>
+
+  <footer class="info">
+    <h2>Pro Loco Calatabiano APS</h2>
+    <p>
+      📍 <a href="https://www.google.com/maps/place/Vicolo+Guglielmo+Oberdan,+95011+Calatabiano+CT" target="_blank" rel="noopener">
+        Vicolo Guglielmo Oberdan - 95011 Calatabiano (CT)
+      </a>
+    </p>
+    <p>
+      ✉️ <a href="mailto:prolococalatabiano.social@gmail.com">prolococalatabiano.social@gmail.com</a>
+    </p>
+    <p>
+      📞 <a href="tel:+393803036621">+39 380 303 6621</a>
+    </p>
+    <p>
+      🕒 Lun - Dom 9:00 - 13:00 / 15:00 - 19:00
+    </p>
+    <div class="socials">
+      <a href="https://www.facebook.com/prolococalatabiano/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/pro_loco_calatabiano_aps/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+    </div>
+    </p>
+  </footer>
+  <script>
+  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
+</body>
+</html>
