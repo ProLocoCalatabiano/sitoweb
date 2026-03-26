@@ -133,9 +133,10 @@
       color: #222;
     }
     .locali-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      display: flex;
+      flex-direction: column;
       gap: 30px;
+      align-items: center;
     }
     .locale-card {
       background: white;
@@ -143,6 +144,11 @@
       overflow: hidden;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
+      max-width: 1000px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
     }
     .locale-card:hover {
       transform: translateY(-6px);
@@ -153,7 +159,45 @@
       height: auto;
       object-fit: contain;
       background: #f5f7fa;
+      display: block;
     }
+    /* Palazzo Gravina: immagine ritagliata centralmente */
+    .locale-card:nth-of-type(2) .locale-img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .via-crucis-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 10px;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+
+    .via-crucis-scroll img {
+      height: 260px;
+      width: auto;
+      flex-shrink: 0;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 4px;
+      background: #f5f7fa;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+
+    .via-crucis-scroll::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .via-crucis-scroll::-webkit-scrollbar-thumb {
+      background: #ccc;
+    }
+
     .locale-content {
       padding: 22px;
     }
@@ -179,11 +223,33 @@
       color: #555;
       margin: 10px 0 16px 0;
     }
-    .locale-actions a {
-      text-decoration: none;
-      font-size: 0.85rem;
+    .locale-actions {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+    }
+    .locale-actions .maps-btn {
+      display: inline-block;
+      padding: 6px 16px;
+      background: #3498db;
+      color: #fff !important;
+      border-radius: 8px;
       font-weight: 600;
-      color: #e95e0f;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: background 0.3s, box-shadow 0.3s;
+      border: none;
+      margin-right: 0;
+      margin-left: 0;
+      box-shadow: 0 2px 10px rgba(52,152,219,0.10);
+    }
+    .locale-actions .maps-btn:hover,
+    .locale-actions .maps-btn:focus {
+      background: #217dbb;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(52,152,219,0.14);
     }
 
     /* Link sotto locali */
@@ -314,6 +380,69 @@ footer .socials a:hover {
   text-indent: -9999px; /* nasconde il testo del link */
   z-index: 2;
 }
+
+body {
+  overflow-x: hidden;
+}
+
+.locali-wrapper {
+  max-width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+  .locali-grid {
+    gap: 20px;
+  }
+  .locale-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .locali-grid {
+    gap: 15px;
+  }
+
+  .locali-wrapper {
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .via-crucis-scroll {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    padding: 10px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .via-crucis-scroll img {
+    width: auto !important;
+    flex-shrink: 0;
+    height: 200px;
+    margin-right: 8px;
+    object-fit: cover;
+  }
+
+  .locale-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* Palazzo Gravina: immagine ritagliata centralmente su mobile */
+  .locale-card:nth-of-type(2) .locale-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
 </style>
 </head>
 <body>
@@ -327,7 +456,8 @@ footer .socials a:hover {
           <a href="javascript:void(0)" class="dropbtn">Esplora ▾</a>
           <ul class="dropdown-content">
             <li><a href="attrazioni.html">Attrazioni</a></li>
-            <li><a href="locali.html" class="active">Ristoranti & Bar</a></li>
+            <li><a href="locali.html">Ristoranti & Bar</a></li>
+            <li><a href="storia.html" class="active">Storia e Cultura</a></li>
           </ul>
         </li>
         <li><a href="chisiamo.html">Chi siamo</a></li>
@@ -344,7 +474,37 @@ footer .socials a:hover {
   <section class="locali-wrapper">
 
     <div class="locali-grid">
+      <div class="locale-card">
+        <div class="via-crucis-scroll">
+          <img src="img/storia/viacrucis/viacrucis1.webp" alt="Via Crucis 1" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis2.webp" alt="Via Crucis 2" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis3.webp" alt="Via Crucis 3" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis4.webp" alt="Via Crucis 4" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis5.webp" alt="Via Crucis 5" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis6.webp" alt="Via Crucis 6" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis7.webp" alt="Via Crucis 7" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis8.webp" alt="Via Crucis 8" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis9.webp" alt="Via Crucis 9" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis10.webp" alt="Via Crucis 10" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis11.webp" alt="Via Crucis 11" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis12.webp" alt="Via Crucis 12" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis13.webp" alt="Via Crucis 13" onclick="openLightbox(this.src)">
+          <img src="img/storia/viacrucis/viacrucis14.webp" alt="Via Crucis 14" onclick="openLightbox(this.src)">
+        </div>
+        <div class="locale-content">
+          <span class="locale-type">Religione</span>
+          <span class="locale-type">Natura</span>
+          <h3>La Via Crucis verso il castello</h3>
+          <p>
+            Percorso religioso che si svolge ogni anno durante la settimana santa, in cui i fedeli percorrono a piedi il sentiero che conduce al castello di Calatabiano, sostando in 14 tappe per commemorare le stazioni della Passione di Cristo. La Via Crucis è un momento di grande devozione e partecipazione popolare, che richiama numerosi visitatori e pellegrini da tutta la regione.
+          </p>
+          <div class="locale-actions" style="margin-top: 10px;">
+            <a href="https://maps.app.goo.gl/idBQtBz8r42Rpb5N7" target="_blank" rel="noopener" class="maps-btn">Maps</a>
+          </div>
+        </div>
+      </div>
 
+      <!--
       <div class="locale-card">
         <img src="img/storia/castello.jpg" class="locale-img" alt="Castello di Calatabiano">
         <div class="locale-content">
@@ -356,18 +516,23 @@ footer .socials a:hover {
           </p>
         </div>
       </div>
+      -->
 
       <div class="locale-card">
-        <img src="img/storia/palazzogravina.webp" class="locale-img" alt="Chiese di Calatabiano">
+        <img src="img/storia/palazzogravina.webp" class="locale-img" alt="Chiese di Calatabiano" onclick="openLightbox(this.src)">
         <div class="locale-content">
           <span class="locale-type">Monumenti</span>
           <h3>Palazzo Gravina</h3>
           <p>
-            Alla famiglia Gravina si deve la costruzione, dopo il terremoto del 1693, del Palazzo Gravina, oggi di proprietà privata. È a pianta quadrata e si articola su due piani: quello inferiore, destinato probabilmente alla servitù, e quello superiore, alla residenza dei Principi. I due piani vengono scanditi da una cornice in pietra che corre lungo tutto il prospetto. L'ingresso principale è posto lateralmente ed al di fuori del prospetto edificato. Oltre ai due ingressi in pietra lavica, all'interno del cortile, pregevoli appaiono il bellissimo portale in pietra lavica e le mensole che sorreggono il balcone. I mascheroni in pietra, le inferriate e le sculture floreali che, secondo una interpretazione storica, servivano a scacciare le pestilenze molto diffuse in quellepoca e tutte le altre sculture in pietra, come quelle del Castello San Marco, vengono attribuite ai maestri Flavetta. Altri bei esemplari di arte barocca si possono ammirare in alcuni balconi del centro cittadino, lungo la via XX Settembre e la via Cavour.
+            Alla famiglia Gravina si deve la costruzione, dopo il terremoto del 1693, del Palazzo Gravina, oggi di proprietà privata. È a pianta quadrata e si articola su due piani: quello inferiore, destinato probabilmente alla servitù, e quello superiore, alla residenza dei Principi. I due piani vengono scanditi da una cornice in pietra che corre lungo tutto il prospetto. L'ingresso principale è posto lateralmente ed al di fuori del prospetto edificato. Oltre ai due ingressi in pietra lavica, all'interno del cortile, pregevoli appaiono il bellissimo portale in pietra lavica e le mensole che sorreggono il balcone. I mascheroni in pietra, le inferriate e le sculture floreali che, secondo una interpretazione storica, servivano a scacciare le pestilenze molto diffuse in quell'epoca e tutte le altre sculture in pietra, come quelle del Castello San Marco, vengono attribuite ai maestri Flavetta. Altri bei esemplari di arte barocca si possono ammirare in alcuni balconi del centro cittadino, lungo la via XX Settembre e la via Cavour.
           </p>
+          <div class="locale-actions" style="margin-top: 10px;">
+            <a href="https://maps.app.goo.gl/yLn99uaSn2u69hcn8" target="_blank" rel="noopener" class="maps-btn">Maps</a>
+          </div>
         </div>
       </div>
 
+      <!--
       <div class="locale-card">
         <img src="img/storia/tradizioni.jpg" class="locale-img" alt="Tradizioni popolari">
         <div class="locale-content">
@@ -378,6 +543,7 @@ footer .socials a:hover {
           </p>
         </div>
       </div>
+      -->
 
     </div>
 
@@ -406,8 +572,75 @@ footer .socials a:hover {
     </div>
     </p>
   </footer>
+</footer>
+  <div id="lightbox" class="lightbox">
+    <div style="position:absolute;top:0;left:0;width:100%;height:100%;"></div>
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <span class="prev" onclick="prevImage()">❮</span>
+    <span class="next" onclick="nextImage()">❯</span>
+  </div>
   <script>
   (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
+  <script>
+  let currentIndex = 0;
+  let images = [];
+
+  function openLightbox(src) {
+    const lightbox = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+
+    images = Array.from(document.querySelectorAll('.via-crucis-scroll img'));
+    currentIndex = images.findIndex(i => i.src === src);
+
+    img.src = src;
+    lightbox.style.display = "block";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+
+  function nextImage() {
+    if (images.length === 0) return;
+    currentIndex = (currentIndex + 1) % images.length;
+    document.getElementById("lightbox-img").src = images[currentIndex].src;
+  }
+
+  function prevImage() {
+    if (images.length === 0) return;
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    document.getElementById("lightbox-img").src = images[currentIndex].src;
+  }
+
+  // Chiudi lightbox cliccando sull'overlay ma non sulla X o sull'immagine
+  document.getElementById("lightbox").addEventListener("click", function(e) {
+    // Se clicco direttamente sull'overlay (div che fa da background)
+    // oppure sul lightbox stesso (ma non su altri elementi figli)
+    if (e.target === this) {
+      closeLightbox();
+    }
+  });
+
+  // Evento click sulla X per chiudere il lightbox
+  document.querySelector("#lightbox .close").addEventListener("click", function(e) {
+    closeLightbox();
+    e.stopPropagation();
+  });
+
+  // Impedisci la propagazione del click sull'immagine nel lightbox
+  document.getElementById("lightbox-img").addEventListener("click", function(e) {
+    e.stopPropagation();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (document.getElementById("lightbox").style.display === "block") {
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "Escape") closeLightbox();
+    }
+  });
   </script>
 </body>
 </html>
