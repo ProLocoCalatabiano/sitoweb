@@ -157,13 +157,43 @@
 
     /* Description */
     .description {
-      padding: 20px;
+      padding: 40px;
       max-width: 900px;
       margin: 20px auto 40px auto;
       background-color: rgba(255,255,255,0.8);
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
+      text-align: justify;
+    }
+
+    .language-switch {
+      text-align: right;
+      margin-bottom: 15px;
+    }
+
+    .language-switch button {
+      background: #eee;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 12px;
+      transition: 0.3s;
+    }
+
+    .language-switch button.active {
+      background: #333;
+      color: white;
+      border-color: #333;
+    }
+
+    .lang-content {
+      animation: fadeIn 0.5s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     /* Button link */
@@ -339,8 +369,62 @@
 
   <!-- Description -->
   <div class="description">
-    Inserisci qui una breve descrizione del Castello Arabo - Normanno
-  </div>
+    <div class="language-switch">
+        <button onclick="switchLang('it')" id="btn-it" class="active">IT</button>
+        <button onclick="switchLang('en')" id="btn-en">EN</button>
+    </div>
+
+    <div id="text-it" class="lang-content">
+        <p>Sul Castello di Calatabiano, tra le poche certezze storiche tramandate, vi è la sua origine araba. Si
+ritiene che sia stato edificato intorno al IX secolo da un hakim di nome Al-Bian. La sua storia è
+ampia e affascinante: alcuni ritrovamenti archeologici, tra cui monete di epoca romana, fanno
+pensare che il sito fosse frequentato o già occupato in tempi ancora più antichi. Nel corso dei secoli
+il castello visse anche la dominazione normanna e passò nelle mani di diversi proprietari. Il periodo
+di maggiore splendore fu quello legato alla famiglia Cruyllas, sotto la quale la fortezza assunse
+grande prestigio e importanza strategica. La struttura ha subito i danni causati da numerosi
+terremoti, ma nonostante ciò continua ancora oggi a dominare con imponenza il territorio di
+Calatabiano. L’accesso al castello avviene attraverso un portale ad arco a sesto acuto, che conduce a
+un cortile di forma rettangolare sviluppato sul lato sud-ovest. Da qui è possibile raggiungere diverse
+aree della fortezza. Tra gli ambienti più significativi vi è il grande salone, dal quale due importanti
+finestre regalano una splendida vista sulla Valle dell’Alcantara. Sempre dal cortile si accede anche
+alla parte più antica del complesso, delimitata da un muro con porta d’ingresso: qui sorgeva il
+mastio, la torre principale e più fortificata, tipica dei castelli medievali. Il castello comprendeva
+inoltre ambienti residenziali, antichi servizi igienici e una cappella, nel cui catino absidale sono
+ancora visibili tracce dell’affresco originario raffigurante il Cristo Pantocratore. Nel cortile si
+trovano diverse cavità scavate nella roccia, molte delle quali utilizzate per la raccolta dell’acqua
+piovana, necessaria per sopperire all’assenza di sorgenti naturali sul luogo. Le decorazioni ancora
+oggi visibili all’interno appartengono in parte all’epoca tardo-barocca. Al suo interno sono stati
+inoltre rinvenuti diversi reperti, tra cui resti ossei e oggetti appartenuti alle famiglie nobili del
+tempo. Il Castello di Calatabiano rappresenta un elemento fondamentale per la storia e l’identità del
+paese. È simbolo di radici profonde, tradizioni tramandate nei secoli e di una civiltà antica che ha
+contribuito a rendere questo luogo una preziosa gemma del territorio catanese.</p>
+    </div>
+
+    <div id="text-en" class="lang-content" style="display: none;">
+        <p>Among the few historical certainties regarding the Castle of Calatabiano is its Arab origin. It is
+believed to have been built around the 9th century by a hakim named Al-Bian. Its history is broad
+and fascinating: archaeological discoveries, including Roman-era coins, suggest that the site may
+have been inhabited or used even in earlier times. Over the centuries, the castle also experienced
+Norman rule and passed through the hands of several owners. Its most prosperous period came
+under the Cruyllas family, when the fortress reached great prestige and strategic importance. The
+structure suffered damage from several earthquakes, yet it still rises proudly above the town of
+Calatabiano today. The entrance to the castle is through a pointed arch gateway leading to a
+rectangular courtyard on the south-west side. From here, visitors can access several areas of the
+fortress. Among the most important rooms is the great hall, where two large windows offer
+breathtaking views over the Alcantara Valley. From the courtyard, it is also possible to reach the
+oldest part of the complex, enclosed by a wall with an entrance door. This section once contained
+the keep, the main and most fortified tower typical of medieval castles. The castle also included
+residential quarters, ancient sanitary facilities, and a chapel, where traces of the original fresco
+depicting Christ Pantocrator can still be seen in the apse basin. In the courtyard there are several
+cavities carved into the rock, many of which were used to collect rainwater due to the absence of
+natural springs on the site. Some of the decorative elements still visible today date back to the late
+Baroque period. Various findings have also been discovered inside the castle, including skeletal
+remains and objects once belonging to noble families of the time. The Castle of Calatabiano is a key
+symbol of the town’s history and identity. It represents deep roots, traditions handed down through
+the centuries, and an ancient civilization that helped make this place a precious gem of the Catania
+area.</p>
+    </div>
+</div>
 
   <!-- Map -->
   <div class="map-container">
@@ -424,8 +508,21 @@
       }
     });
   </script>
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+
+  <script>
+    function switchLang(lang) {
+      // Gestione visibilità testi
+      document.getElementById('text-it').style.display = (lang === 'it') ? 'block' : 'none';
+      document.getElementById('text-en').style.display = (lang === 'en') ? 'block' : 'none';
+
+      // Gestione stile pulsanti
+      document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  }
+  </script>
+
+  <script>
+  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
 </body>
 </html>

@@ -155,13 +155,43 @@
 
     /* Description */
     .description {
-      padding: 20px;
+      padding: 40px;
       max-width: 900px;
       margin: 20px auto 40px auto;
       background-color: rgba(255,255,255,0.8);
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
+      text-align: justify;
+    }
+
+    .language-switch {
+      text-align: right;
+      margin-bottom: 15px;
+    }
+
+    .language-switch button {
+      background: #eee;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 12px;
+      transition: 0.3s;
+    }
+
+    .language-switch button.active {
+      background: #333;
+      color: white;
+      border-color: #333;
+    }
+
+    .lang-content {
+      animation: fadeIn 0.5s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     /* Mappa integrata */
@@ -348,9 +378,51 @@
   </div>
 
   <!-- Description -->
-  <div class="description">
-    Inserisci qui una breve descrizione della Spiaggia di San Marco
-  </div>
+<div class="description">
+    <div class="language-switch">
+        <button onclick="switchLang('it')" id="btn-it" class="active">IT</button>
+        <button onclick="switchLang('en')" id="btn-en">EN</button>
+    </div>
+
+    <div id="text-it" class="lang-content">
+        <p>Il territorio di Calatabiano, estendendosi in parte lungo la Valle dell’Alcantara, è sorprendentemente
+vasto nonostante le dimensioni contenute del paese. Questa piccola realtà è considerata una preziosa
+gemma del territorio siciliano, ricca di cultura, tradizioni e bellezze naturali. L’area calatabianese è
+tra le più varie e fertili della zona ionica, grazie soprattutto alla presenza del fiume Alcantara, che
+contribuisce alla ricchezza del suolo e alla varietà della vegetazione locale. Da questa terra nascono
+prodotti di qualità, tra cui spiccano le rinomate nespole di Calatabiano, apprezzate per il loro gusto
+dolce e succoso. Durante la stagione della raccolta, questo frutto è protagonista della tradizionale
+Sagra delle Nespole, un importante momento di incontro per residenti e visitatori, dedicato alla
+degustazione di specialità locali e prodotti artigianali realizzati con la nespola. A soli 3 chilometri
+dal centro abitato si trova il suggestivo litorale di San Marco, meta molto apprezzata durante il
+periodo estivo sia dai turisti sia dai residenti della zona. San Marco rappresenta l’anima marinara di
+Calatabiano e si sviluppa lungo il tratto costiero compreso tra la foce del fiume Alcantara e l’area di
+Fiumefreddo di Sicilia. La spiaggia è ampia e accogliente, caratterizzata da un mare azzurro dalle
+acque limpide e profonde, circondata da una fascia verde di eucalipti e da distese di alberi da frutto.
+Da qui si gode di uno splendido panorama sull’Etna. Durante l’estate la zona si anima grazie alla
+presenza di lidi balneari, ristoranti e servizi dedicati ai visitatori. San Marco è il luogo ideale per
+rilassarsi, trascorrere giornate al mare e vivere il fascino del caldo e luminoso clima estivo siciliano.</p>
+    </div>
+
+    <div id="text-en" class="lang-content" style="display: none;">
+        <p>The territory of Calatabiano, extending partly along the Alcantara Valley, is surprisingly wide
+despite the small size of the town itself. This small community is considered a precious gem of
+Sicily, rich in culture, traditions, and natural beauty. The Calatabiano area is one of the most varied
+and fertile in the Ionian region, thanks above all to the presence of the Alcantara River, which
+enriches the land and supports a diverse local landscape. This fertile soil produces high-quality
+products, including the well-known loquats of Calatabiano, appreciated for their sweet and juicy
+flavour. During the harvest season, this fruit becomes the star of the traditional Loquat Festival, an
+important gathering for residents and visitors, dedicated to tasting local specialties and handcrafted
+products made with loquats. Only 3 kilometres from the town centre lies the beautiful San Marco
+coastline, a popular destination during summer for both tourists and local residents. San Marco
+represents the seaside soul of Calatabiano and stretches along the coast between the mouth of the
+Alcantara River and the area of Fiumefreddo di Sicilia. The beach is wide and welcoming, featuring
+blue sea waters that are clear and deep, surrounded by a green belt of eucalyptus trees and orchards.
+From here, visitors can enjoy splendid views of Mount Etna. During the summer season, the area
+comes alive with beach clubs, restaurants, and visitor services. San Marco is the perfect place to
+relax, enjoy days by the sea, and experience the charm of Sicily’s warm and sunny summer climate.</p>
+    </div>
+</div>
 
 <div class="map-container">
   <iframe
@@ -433,8 +505,22 @@
       }
     });
   </script>
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+
+  <script>
+    function switchLang(lang) {
+       // Gestione visibilità testi
+      document.getElementById('text-it').style.display = (lang === 'it') ? 'block' : 'none';
+      document.getElementById('text-en').style.display = (lang === 'en') ? 'block' : 'none';
+
+      // Gestione stile pulsanti
+      document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+  </script>
+
+  <script>
+  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
+
 </body>
 </html>

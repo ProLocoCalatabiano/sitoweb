@@ -154,13 +154,43 @@
 
     /* Description */
     .description {
-      padding: 20px;
+      padding: 40px;
       max-width: 900px;
       margin: 20px auto 40px auto;
       background-color: rgba(255,255,255,0.8);
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
+      text-align: justify;
+    }
+
+    .language-switch {
+      text-align: right;
+      margin-bottom: 15px;
+    }
+
+    .language-switch button {
+      background: #eee;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 12px;
+      transition: 0.3s;
+    }
+
+    .language-switch button.active {
+      background: #333;
+      color: white;
+      border-color: #333;
+    }
+
+    .lang-content {
+      animation: fadeIn 0.5s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     /* Button link */
@@ -356,10 +386,75 @@
   </div>
 
   <!-- Description -->
-  <div class="description">
-    L'antica chiesa madre di Calatabiano. Essa si incontra salendo al castello e presenta una struttura in muratura ed un sontuoso campanile a merli. Nella facciata principale, sul bel portale ogivale d’ingresso, si trovano le insegne dei Crujllas, probabili fondatori della chiesa. Nell’elegante fregio che sovrasta l’ogiva è possibile riconoscere la data della sua ricostruzione (1484), insieme al nome dell’Arcivescovo Eufemio, probabile promotore dell’opera. Alla stessa epoca appartengono, un altro pregevole portale sul lato destro della chiesa con i resti un antico portico. Al suo interno si può notare un dipinto di madonna con bambino e la statua del santo protettore San Filippo Siriaco, collocata in una nicchia, per il quale ogni anno, il sabato precedente la terza domenica di maggio ha luogo la caratteristica “calata” di San Filippo.
-  </div>
+ <div class="description">
+    <div class="language-switch">
+        <button onclick="switchLang('it')" id="btn-it" class="active">IT</button>
+        <button onclick="switchLang('en')" id="btn-en">EN</button>
+    </div>
 
+    <div id="text-it" class="lang-content">
+        <p>Edificata nel 1484 da Giovanni Cruyllas II in stile tardo-gotico, questa chiesa prende il nome dal
+Crocifisso attribuito a Giovanni Salvo d’Antonio, custodito al suo interno. È nota anche come
+Chiesa di San Filippo, sia perché conserva durante tutto l’anno l’antico simulacro di San Filippo
+Siriaco, in attesa delle celebrazioni del mese di maggio, sia perché da questo luogo prende avvio la
+tradizionale “calata”. La festa annuale dedicata al santo patrono del paese, San Filippo Siriaco,
+rappresenta uno dei momenti più importanti per la comunità locale: giorni di profonda devozione,
+partecipazione religiosa e sentito ritrovo collettivo. L’edificio presenta una pianta rettangolare, con
+la sagrestia semicircolare posta a una quota inferiore, poiché costruita sul pendio orientale della
+collina che degrada verso la Valle dell’Alcantara. Gli ingressi presentano bassorilievi decorativi con
+foglie di acanto e margherite intrecciate alle colonnine, simboli tradizionalmente legati
+all’immortalità e alla rinascita. Sul lato sud si trova un portale ogivale architravato in calcare chiaro,
+oltre a una doppia arcata ortogonale alla parete meridionale dell’edificio e ad altri due tratti murari
+disposti nello stesso modo. Questi elementi potrebbero appartenere a una fase costruttiva più antica
+della chiesa. Sul prospetto principale si apre un secondo portale ogivale architravato, sul quale è
+visibile l’antico stemma della famiglia Cruyllas, raffigurante nove crocette d’oro in campo azzurro
+con scudo nobiliare. Il portale è sormontato da un’epigrafe di difficile interpretazione,
+probabilmente riferita al nome dell’arcivescovo Eufemio. Intorno ad essa si tramanda un’antica
+leggenda: “L’iscrizione sarà decifrata soltanto da un cavaliere che vi passerà davanti, lanciato su un
+cavallo bianco, facendo aprire le viscere del monte e rivelando un tesoro inimmaginabile nascosto
+da secoli”. All’interno della chiesa si trova una piccola cappella, sulla cui parete sono ancora visibili
+tracce di un affresco raffigurante la Madonna della Catena, copia dell’opera di Antonello di Saliba.
+In una nicchia decorata ad archetti, dove oggi si trova la statua di San Filippo Siriaco, era
+originariamente collocata quella di Santa Caterina d’Alessandria. La statua è oggi visibile in Piazza
+Vittorio Emanuele, dove fu trasferita nel 1875. Sul lato nord si innalza un elegante campanile a
+pianta quadrata, costruito in pietra lavica e calcare. All’esterno, un marcapiano separa il piano terra
+dal primo livello, sormontato da un attico con quattro aperture ogivali e da un coronamento merlato
+con cuspide conica. A circa cento metri al di sotto della chiesa si trova un altro piccolo luogo di
+culto: la Chiesa della Madonna del Carmelo, edificata nel 1510 per volontà dei devoti carmelitani.
+Oggi ne restano le mura perimetrali e, all’interno, un piccolo altare ancora visibile.</p>
+    </div>
+
+    <div id="text-en" class="lang-content" style="display: none;">
+        <p>Built in 1484 by Giovanni Cruyllas II in late Gothic style, this church takes its name from the
+Crucifix attributed to Giovanni Salvo d’Antonio, preserved inside the building. It is also known as
+the Church of Saint Philip, both because it houses throughout the year the ancient statue of Saint
+Philip of Syria, awaiting the celebrations held in May, and because the traditional “calata”
+procession begins here. The annual feast dedicated to the town’s patron saint, Saint Philip of Syria,
+is one of the most important moments for the local community: days of deep devotion, religious
+celebration, and shared joy. The church has a rectangular plan, with a semicircular sacristy located
+at a lower level, as it was built on the eastern slope of the hill descending toward the Alcantara
+Valley. Its entrances feature decorative bas-reliefs with acanthus leaves and daisies intertwined with
+small columns, traditional symbols of immortality and rebirth. On the southern side stands a pointed
+arched portal with lintel, made of light limestone, together with a double arcade perpendicular to the
+southern wall and two further wall sections arranged in the same way. These elements may belong
+to an earlier construction phase of the church. On the main façade there is another pointed arched
+portal with lintel, displaying the ancient coat of arms of the Cruyllas family, with nine golden
+crosses on a blue field and a noble shield. Above the portal is an inscription of difficult
+interpretation, probably referring to Archbishop Euphemius. Around it survives an old local legend:
+“The inscription will be deciphered only by a knight passing before it at full speed on a white horse,
+causing the mountain to open and reveal an unimaginable treasure hidden for centuries”. Inside the
+church there is a small chapel where traces of a fresco depicting Our Lady of the Chain can still be
+seen, a copy of the work by Antonello di Saliba. In a niche decorated with small arches, where the
+statue of Saint Philip now stands, there was originally a statue of Saint Catherine of Alexandria.
+Today it can be seen in Piazza Vittorio Emanuele, where it was moved in 1875. On the northern side
+rises an elegant square bell tower built of lava stone and limestone. Externally, a stringcourse marks
+the division between the ground floor and the upper level, topped by an attic with four pointed
+openings and a battlemented crown with a conical pinnacle. About one hundred metres below the
+church stands another small place of worship: the Church of Our Lady of Mount Carmel, built in
+1510 at the request of Carmelite devotees. Today only the perimeter walls remain, although a small
+altar is still visible inside.</p>
+    </div>
+</div>
   <!-- Map -->
   <div class="map-container">
     <iframe
@@ -442,8 +537,22 @@
       }
     });
   </script>
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+
+  <script>
+    function switchLang(lang) {
+      // Gestione visibilità testi
+      document.getElementById('text-it').style.display = (lang === 'it') ? 'block' : 'none';
+      document.getElementById('text-en').style.display = (lang === 'en') ? 'block' : 'none';
+
+      // Gestione stile pulsanti
+      document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+  </script>
+
+  <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
+
 </body>
 </html>

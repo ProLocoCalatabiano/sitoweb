@@ -150,14 +150,44 @@
 
     /* Description */
     .description {
-      padding: 20px;
+      padding: 40px;
       max-width: 900px;
       margin: 20px auto 40px auto;
       background-color: rgba(255,255,255,0.8);
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
+      text-align: justify;
     }
+
+    .language-switch {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.language-switch button {
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.language-switch button.active {
+    background: #333;
+    color: white;
+    border-color: #333;
+}
+
+.lang-content {
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
     /* Button link */
     .link {
@@ -335,13 +365,73 @@
   </div>
 
   <!-- Description -->
-  <div class="description">
-    La Chiesa Maria SS. Annunziata è stata costruita tra il 1737 e il 1740. La ricchezza degli interni riscatta a sufficienza la povertà dell'esterno, abbellito semplicemente da una finestra in pietra lavica. La chiesa, a croce latina, presenta due ingressi ed è suddivisa da colonne lesene che fuoriescono dai muri con capitelli compositi. Il transetto con volte a botte è sormontato da una cupola. L'altare del SS. Sacramento, in stile barocco, è costruito con marmi policromi di Taormina ad intarsio e sopra di esso è visibile una copia dell'ultima cena di Leonardo da Vinci.
-L'altare del SS. Crocifisso, sopra il quale è rappresentata la crocifissione di Gesù, è abbellito da un Crocifisso ligneo e dalla statua dell'Addolorata ricavata da un tronco d'ulivo. Il presbiterio e circondato da un coro ligneo risalente alla prima metà dell'Ottocento. L'interno è ancora in parte rivestito da pitture su muro, risalenti al 1800, opera di Antonino Freri e Carmelo Ganguzza.
-Nelle vele del transetto sono rappresentati i 4 Evangelisti (Marco con il leone, Matteo con il bue, Giovanni con l'aquila e Luca con l'angelo); mentre, nel catino centrale, si trova il dipinto del Sacro Cuore di Gesù. Sulla volta della navata centrale è visibile un dipinto rappresentante Mosè e la Madonna circondata da angeli e santi. Lungo la parete della navata centrale è possibile ammirare 4 tele: la Madonna del Rosario, la Madonna del Carmine, s. Giuseppe morente e Maria SS. Annunziata. Di pregevole fattura sono il pulpito ligneo, con al centro l'aquila reale, stemma dei Borboni, costruito nel 1791 da Nunzio Grasso, e la fonte battesimale con copertura lignea in stile rococo. Sono, inoltre, presenti varie statue tra cui quella in legno e cartapesta del Patrono di Calatabiano, s. Giorgio, il cui culto è stato ereditato dalla dominazione normanna.
-L'opera di maggior pregio è sicuramente il crocifisso ligneo, dipinto ad olio da Giovanni Salvo D'Antonio, nipote di Antonello da Messina. Sotto l'altare maggiore si trova la cripta, costituita da un vano circolare con nicchie mortuarie ed altare centrale, alla quale si può accedere dai locali della sacrestia. Intorno al 1970 è stato demolito l'antico, cadente, campanile, sostituito da quello esistente.
-  </div>
+<div class="description">
+    <div class="language-switch">
+        <button onclick="switchLang('it')" id="btn-it" class="active">IT</button>
+        <button onclick="switchLang('en')" id="btn-en">EN</button>
+    </div>
 
+    <div id="text-it" class="lang-content">
+        <p>La Chiesa Madre di Calatabiano si affaccia sulla piazza centrale del paese ed è da sempre il cuore
+della vita religiosa e comunitaria della cittadina. Rappresenta il principale luogo di culto, sede delle
+più importanti celebrazioni liturgiche e punto di riferimento spirituale per l’intera comunità.
+Dedicata a Maria Santissima Annunziata, fu costruita tra il 1737 e il 1740. L’aspetto esterno, sobrio
+ed essenziale, contrasta con la ricchezza decorativa degli interni. La facciata si presenta semplice,
+caratterizzata da linee pulite e da una finestra centrale incorniciata da pietra lavica. L’edificio ha una
+pianta a croce latina, con due ingressi principali e lesene addossate alle pareti, ornate da capitelli
+compositi. Il transetto, coperto da volte a botte, è sormontato da una cupola che conferisce slancio e
+armonia all’intera struttura. L’altare del Santissimo Sacramento è in stile barocco ed è realizzato con
+preziosi marmi intarsiati provenienti da Taormina. Al di sopra si trova una copia dell’Ultima Cena
+di Leonardo da Vinci. Sull’altare del Santissimo Crocifisso è raffigurata la Crocifissione di Gesù,
+impreziosita dalla presenza di un importante crocifisso ligneo ricavato da un tronco d’ulivo,
+realizzato da Giovanni Salvo D’Antonio, nipote di Antonello da Messina. Quest’opera è considerata
+una delle più preziose custodite all’interno della chiesa. Il presbiterio è circondato da un coro ligneo
+risalente all’Ottocento ed è arricchito da decorazioni pittoriche murali realizzate dai pittori Antonino
+Freri e Carmelo Ganguzza. L’interno della chiesa è caratterizzato da numerosi affreschi e dipinti
+murali. Nelle vele del transetto sono raffigurati i quattro Evangelisti con i rispettivi simboli
+iconografici: San Marco con il leone, San Matteo con l’angelo, San Giovanni con l’aquila e San
+Luca con il bue. Nel catino centrale spicca la raffigurazione del Sacro Cuore di Gesù, opera di
+grande impatto visivo che cattura immediatamente lo sguardo del visitatore. Sulla volta della navata
+è rappresentato Mosè, mentre lungo la stessa area si possono ammirare quattro importanti tele: La
+Madonna del Rosario, La Madonna del Carmine, San Giuseppe Morente e Maria Santissima
+Annunziata. Da quest’ultima opera deriva il titolo della chiesa. Un tempo, ai suoi piedi, si trovava la
+tomba di Ignazio II Gravina, fondatore di Piedimonte Etneo e Principe di Palagonia. Di particolare
+pregio artistico sono anche il pulpito ligneo, decorato al centro con l’aquila simbolo della famiglia
+Borbone, e la fonte battesimale in stile rococò. All’interno della chiesa sono presenti inoltre diverse
+sculture sacre, tra cui la più importante è quella di San Giorgio, patrono del paese, il cui culto deriva
+dall’antica tradizione normanna.</p>
+    </div>
+
+    <div id="text-en" class="lang-content" style="display: none;">
+        <p>The Mother Church of Calatabiano stands in the town’s main square and has always been the heart
+of local religious and community life. It is the principal place of worship, hosting the most
+important liturgical celebrations and serving as a spiritual landmark for the entire community.
+Dedicated to Saint Mary of the Annunciation, it was built between 1737 and 1740. Its exterior
+appearance is sober and simple, in clear contrast with the richly decorated interior. The façade is
+elegant in its simplicity, featuring clean lines and a central window framed in lava stone. The church
+has a Latin cross plan, with two main entrances and pilasters attached to the walls, decorated with
+composite capitals. The transept, covered by barrel vaults, is surmounted by a dome that gives
+balance and grandeur to the structure. The altar of the Blessed Sacrament is in Baroque style and
+made with finely inlaid marble from Taormina. Above it hangs a copy of Leonardo da Vinci’s Last
+Supper. On the altar of the Holy Crucifix is a depiction of the Crucifixion of Jesus, enriched by an
+important wooden crucifix carved from an olive tree trunk by Giovanni Salvo D’Antonio, nephew
+of Antonello da Messina. This work is considered one of the most precious treasures preserved
+inside the church. The presbytery is surrounded by a wooden choir dating back to the nineteenth
+century and enhanced by wall paintings created by the artists Antonino Freri and Carmelo
+Ganguzza. The interior of the church is distinguished by numerous frescoes and mural paintings. In
+the pendentives of the transept are depicted the Four Evangelists with their traditional symbols:
+Saint Mark with the lion, Saint Matthew with the angel, Saint John with the eagle, and Saint Luke
+with the ox. In the central apse basin appears the Sacred Heart of Jesus, a striking work that
+immediately captures the visitor’s attention. On the nave vault, Moses is depicted, while four
+important canvases can also be admired in the same area: Our Lady of the Rosary, Our Lady of
+Mount Carmel, Saint Joseph Dying, and Saint Mary of the Annunciation. The church takes its name
+from the last of these works. At one time, at its feet, stood the tomb of Ignazio II Gravina, founder
+of Piedimonte Etneo and Prince of Palagonia. Also of notable artistic value are the wooden pulpit,
+decorated at its centre with the eagle symbol of the Bourbon family, and the Rococo-style baptismal
+font. The church also houses several sacred sculptures, among which the most important is that of
+Saint George, patron saint of the town, whose devotion derives from the ancient Norman tradition.</p>
+    </div>
+</div>
   <!-- Map -->
   <div class="map-container">
     <iframe
@@ -378,6 +468,7 @@ L'opera di maggior pregio è sicuramente il crocifisso ligneo, dipinto ad olio d
       <a href="https://www.instagram.com/pro_loco_calatabiano_aps/" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
   </footer>
+
   <script>
     let currentIndex = 0;
     const images = Array.from(document.querySelectorAll('.gallery img'));
@@ -425,8 +516,21 @@ L'opera di maggior pregio è sicuramente il crocifisso ligneo, dipinto ad olio d
     });
   </script>
 
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+  <script>
+    function switchLang(lang) {
+    // Gestione visibilità testi
+    document.getElementById('text-it').style.display = (lang === 'it') ? 'block' : 'none';
+    document.getElementById('text-en').style.display = (lang === 'en') ? 'block' : 'none';
+
+    // Gestione stile pulsanti
+    document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  }
+  </script>
+
+  <script>
+    (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
+
 </body>
 </html>

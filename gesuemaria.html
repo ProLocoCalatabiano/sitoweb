@@ -155,13 +155,43 @@
 
     /* Description */
     .description {
-      padding: 20px;
+      padding: 40px;
       max-width: 900px;
       margin: 20px auto 40px auto;
       background-color: rgba(255,255,255,0.8);
       border-radius: 12px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
+      text-align: justify;
+    }
+
+    .language-switch {
+      text-align: right;
+      margin-bottom: 15px;
+    }
+
+    .language-switch button {
+      background: #eee;
+      border: 1px solid #ccc;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 12px;
+      transition: 0.3s;
+    }
+
+    .language-switch button.active {
+      background: #333;
+      color: white;
+      border-color: #333;
+    }
+
+    .lang-content {
+      animation: fadeIn 0.5s;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     /* Button link */
@@ -358,11 +388,88 @@
   </div>
 
   <!-- Description -->
-  <div class="description">
-  L'inizio dei lavori della chiesa sembrano risalire al 1695, aperta al culto due anni dopo. La facciata esterna, sulla quale si apre una finestra, presenta un ingresso incorniciato in pietra lavica e sormontato da un arco a tutto sesto in rilievo. Pregevole è il campanile quadrato con scanditure orizzontali ed una finestra ogivale, sormontato da una torretta a punta conica, che presenta un caratteristico arco a sostegno della campana.
-Sulla parete meridionale sorgeva l'ingresso laterale, oggi murato, con stipiti ed arco a sesto lievemente acuto in pietra lavica. L'interno e ad un'unica navata con volta a botte, decorata con stucchi. Interessante il pavimento maiolicato con disegni geometrici e floreali. In fondo si può ammirare l'altare maggiore, rivestito di marmi policromi, con quattro colonne in gesso bianco, contorte e lavorate, recanti in alto due angeli. Al centro, tra sculture floreali e una corona in gesso, nel 1709 è stato posto un quadro rappresentante Gesù e Maria. A sinistra si trova la "Custodia" (1714) degli oli santi, su cui è dipinto il braccio di Cristo incrociato con quello di san Francesco d'Assisi. Da qui si accede alla sacrestia, nella quale si trova una fonte in marmo di Taormina. Sulle pareti laterali, entro nicchie, si trovano quattro altari dedicati a Santa Maria degli Angeli e al SS. Crocifisso (a sinistra), alla Madonna della Lettera con San Filippo Siriaco e San Giorgio e all'immacolata (a destra). Si noti che quest'ultimo dipinto e l'unico quadro esistente in cui sono ritratti sia il santo Patrono (S. Giorgio) che il Protettore (S. Filippo).
-All'interno si custodisce il simulacro del Cristo morto, portato in processione il Venerdì santo e ancora le statue in cartapesta di s. Luigi Gonzaga e della Madonna Assunta. All'interno della chiesa vi è una cantoria barocca sostenuta da un arco a sesto ribassato, adornato da tralci di vite e da strumenti della passione del Cristo (i tre chiodi, la tenaglia, il martello, ecc.).
-  </div>
+<div class="description">
+    <div class="language-switch">
+        <button onclick="switchLang('it')" id="btn-it" class="active">IT</button>
+        <button onclick="switchLang('en')" id="btn-en">EN</button>
+    </div>
+
+    <div id="text-it" class="lang-content">
+        <p>La Chiesa di Gesù e Maria è uno degli edifici religiosi più simbolici della città di Calatabiano.
+Sorge in un punto storico del paese, tra le viuzze e le antiche abitazioni dell’omonimo quartiere
+Gesù e Maria, e si affaccia su un suggestivo belvedere panoramico. Da questo punto si possono
+ammirare il campanile della Chiesa Madre, situata nella piazza centrale, la spiaggia di San Marco in
+lontananza e, sulla destra, la maestosa presenza dell’Etna. Un panorama di grande fascino che
+unisce mare, montagna e centro storico. La chiesa ha origini barocche e, in passato, sembra fosse
+annessa al vicino convento dei Frati Minori, oggi purtroppo non più esistente. La facciata principale
+si apre su una piccola piazza ed è caratterizzata da una finestra centrale collocata sopra l’ingresso,
+incorniciato da pietra lavica e sormontato da un arco a tutto sesto in rilievo. Particolarmente
+importante è il campanile a pianta quadrata, scandito da cornici orizzontali e arricchito da una
+finestra ogivale. La struttura termina con una torretta a cuspide conica, dotata del tradizionale arco
+di sostegno per la campana. Sulla parete meridionale era presente l’antico ingresso della chiesa,
+oggi murato. L’interno presenta una sola navata con volta a botte decorata a stucchi. Il pavimento
+maiolicato, di notevole pregio, è composto da motivi geometrici e floreali. In fondo alla navata si
+trova l’altare maggiore, rivestito in marmi policromi e impreziosito da quattro colonne tortili in
+gesso bianco, riccamente decorate, sormontate nella parte superiore da due figure angeliche. Al
+centro dell’altare è collocata l’opera da cui la chiesa prende il nome, attribuita a Vincenzo Tuccari e
+risalente al XVIII secolo. Si tratta di un olio su tela raffigurante “La Vera Icona ai piedi della Croce
+tra Gesù e Maria”. Nel dipinto, due angeli sorreggono il velo sul quale appare il volto sofferente di
+Cristo. Sulla croce compaiono i tre chiodi e l’iscrizione INRI, simboli della Passione e della
+Crocifissione. Sulla destra è raffigurata la Madonna, che contempla il Figlio con espressione dolce e
+materna, tratto tipico della sensibilità artistica di Tuccari. Sul lato opposto compare il Cristo
+glorificato, avvolto in un manto rosso: con la mano destra benedice, mentre con la sinistra indica la
+ferita al costato, richiamo al sacrificio compiuto. L’uso della luce e delle ombre conferisce
+morbidezza alle figure, mentre la tavolozza cromatica privilegia tonalità di rosso e marrone. Sullo
+sfondo, la scena centrale è illuminata e arricchita dalla presenza di angeli raffigurati con teste alate.
+Quest’opera è di grande importanza non solo perché dà il nome alla chiesa, ma anche perché
+rappresenta una parte significativa del patrimonio artistico e culturale di Calatabiano. Sul lato
+sinistro dell’edificio si apre un passaggio che conduce alla sagrestia. All’interno della chiesa sono
+conservate anche altre opere di rilievo, collocate lungo le pareti laterali. Tra queste si ricordano
+“L’Immacolata”, anch’essa attribuita a Vincenzo Tuccari, e “La Madonna della Lettera tra i Santi
+Giorgio e Filippo Siriaco”, importante olio su tela dello stesso autore, nel quale sono raffigurati il
+patrono e il protettore della comunità calatabianese. Un’ulteriore opera presente è “La Madonna con
+Bambino e San Francesco”. La chiesa custodisce inoltre il simulacro del Cristo Morto, portato in
+processione durante la Via Crucis del Venerdì Santo. Infine, nella parte superiore dell’ingresso
+interno, si trova una cantoria barocca sostenuta da un arco a sesto ribassato.</p>
+    </div>
+
+    <div id="text-en" class="lang-content" style="display: none;">
+        <p>The Church of Jesus and Mary is one of the most symbolic religious buildings in the town of
+Calatabiano. It stands in a historic area, among the narrow streets and old houses of the district that
+bears the same name, and overlooks a charming panoramic terrace. From this viewpoint, visitors
+can admire the bell tower of the Mother Church in the main square, the beach of San Marco in the
+distance, and the majestic presence of Mount Etna to the right. It is a breathtaking view combining
+sea, mountain, and historic centre. The church has Baroque origins and was once probably
+connected to the nearby convent of the Friars Minor, which unfortunately no longer exists. The
+main façade faces a small square and is distinguished by a central window placed above the
+entrance, framed in lava stone and topped by a raised round arch. Particularly noteworthy is the
+square bell tower, marked by horizontal cornices and enriched by a pointed window. The structure
+ends with a conical spire featuring the traditional supporting arch for the bell. The original entrance
+was once located on the southern wall and is now sealed. Inside, the church has a single nave with a
+barrel-vaulted ceiling decorated with stucco work. The majolica floor is especially valuable,
+featuring geometric and floral designs. At the end of the nave stands the high altar, covered in
+polychrome marble and decorated with four twisted white plaster columns, richly ornamented and
+topped with two angelic figures. At the centre of the altar is the painting from which the church
+takes its name, attributed to Vincenzo Tuccari and dating to the 18th century. It is an oil on canvas
+entitled “The True Icon at the Foot of the Cross between Jesus and Mary.” In the painting, two
+angels hold a veil bearing the suffering face of Christ. On the cross appear the three nails and the
+inscription INRI, symbols of the Passion and Crucifixion. On the right stands the Virgin Mary,
+gazing at her Son with a gentle and loving expression, a typical feature of Tuccari’s artistic style.
+On the opposite side is the glorified Christ, wrapped in a red cloak: with his right hand he blesses,
+while with his left he points to the wound in his side, recalling his sacrifice. The use of light and
+shadow gives softness to the figures, while the colour palette favours shades of red and brown. In
+the background, the central scene is illuminated and enriched by angels depicted as winged heads.
+This artwork is of great importance not only because it gives the church its name, but also because
+it forms a significant part of Calatabiano’s artistic and cultural heritage. On the left side of the
+building there is a passage leading to the sacristy. The church also preserves other important works
+displayed along the side walls, including “The Immaculate Conception,” also attributed to Vincenzo
+Tuccari, and “Our Lady of the Letter with Saints George and Philip of Syria,” another important oil
+painting by the same artist depicting the patron and protector saints of the Calatabiano community.
+Another artwork preserved inside is “Madonna and Child with Saint Francis.” The church also
+houses the statue of the Dead Christ, carried in procession during the Way of the Cross on Good
+Friday. Finally, above the internal entrance stands a Baroque choir loft supported by a lowered arch.</p>
+    </div>
+</div>
 
   <!-- Map -->
   <div class="map-container">
@@ -446,8 +553,22 @@ All'interno si custodisce il simulacro del Cristo morto, portato in processione 
       }
     });
   </script>
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+
+  <script>
+    function switchLang(lang) {
+      // Gestione visibilità testi
+      document.getElementById('text-it').style.display = (lang === 'it') ? 'block' : 'none';
+      document.getElementById('text-en').style.display = (lang === 'en') ? 'block' : 'none';
+
+      // Gestione stile pulsanti
+      document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    }
+  </script>
+
+  <script>
+  (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="2APiuCPgn7xAGAFkUVtO-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+  </script>
+  
 </body>
 </html>
